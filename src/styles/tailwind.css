@@ -1,0 +1,284 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    /* 
+       Enquire Now Button - Figma Exact Implementation 
+       - Dimensions: 105px x 35px
+       - Radius: 10px
+       - Fill: Linear Gradient #B455F3 (86%) -> #3937F3 (100%)
+       - Stroke: NONE (Fill only)
+    */
+    .btn-enquire {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 160px;
+        height: 44px;
+        padding: 0 32px;
+        white-space: nowrap;
+        /* Padding must not change visual size */
+
+        /* Typography */
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: #FFFFFF;
+        letter-spacing: normal;
+        text-decoration: none;
+
+        border-radius: 12px;
+        border: none;
+        outline: none;
+        background: transparent;
+        cursor: pointer;
+
+        /* Fill Gradient Logic: 
+           We use a 200% width gradient to allow for a smooth 'flow' animation.
+           0-50% matches the Figma spec (Left-Right).
+           50-100% mirrors it back or loops.
+           Figma: #B455F3 (86%) -> #3937F3 (100%)
+        */
+        background-image: linear-gradient(90deg,
+                #B455F3 0%,
+                #3937F3 50%,
+                #B455F3 100%);
+        background-size: 200% 100%;
+        background-position: 0% 0%;
+        /* Shows the first half (Purple->Blue) */
+
+        transition: background-position 0.4s ease-in-out, transform 0.2s;
+    }
+
+    /* Hover Effect */
+    .btn-enquire:hover {
+        /* Shifts to the second half of the gradient (Blue->Purple) for a subtle flow */
+        background-position: 100% 0%;
+    }
+
+    /* Focus Interaction (Accessible) */
+    .btn-enquire:focus-visible {
+        box-shadow: 0 0 0 2px rgba(57, 55, 243, 0.5);
+    }
+}
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 222.2 84% 4.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222.2 84% 4.9%;
+        --primary: 222.2 47.4% 11.2%;
+        --primary-foreground: 210 40% 98%;
+        --secondary: 210 40% 96.1%;
+        --secondary-foreground: 222.2 47.4% 11.2%;
+        --muted: 210 40% 96.1%;
+        --muted-foreground: 215.4 16.3% 46.9%;
+        --accent: 210 40% 96.1%;
+        --accent-foreground: 222.2 47.4% 11.2%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 40% 98%;
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
+        --ring: 222.2 84% 4.9%;
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        --background: 222.2 84% 4.9%;
+        --foreground: 210 40% 98%;
+        --card: 222.2 84% 4.9%;
+        --card-foreground: 210 40% 98%;
+        --popover: 222.2 84% 4.9%;
+        --popover-foreground: 210 40% 98%;
+        --primary: 210 40% 98%;
+        --primary-foreground: 222.2 47.4% 11.2%;
+        --secondary: 217.2 32.6% 17.5%;
+        --secondary-foreground: 210 40% 98%;
+        --muted: 217.2 32.6% 17.5%;
+        --muted-foreground: 215 20.2% 65.1%;
+        --accent: 217.2 32.6% 17.5%;
+        --accent-foreground: 210 40% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 40% 98%;
+        --border: 217.2 32.6% 17.5%;
+        --input: 217.2 32.6% 17.5%;
+        --ring: 212.7 26.8% 83.9%;
+    }
+}
+
+@layer base {
+    ::selection {
+        background-color: #7C3AED;
+        color: #FFFFFF;
+        /* Progressive Enhancement: Adds a subtle, rich glow since background-image is unsupported on selection */
+        text-shadow: 0px 1px 2px rgba(124, 58, 237, 0.5), 0px 0px 12px rgba(168, 85, 247, 0.4);
+    }
+
+    ::-moz-selection {
+        background-color: #7C3AED;
+        color: #FFFFFF;
+        text-shadow: 0px 1px 2px rgba(124, 58, 237, 0.5), 0px 0px 12px rgba(168, 85, 247, 0.4);
+    }
+
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        overflow-x: hidden;
+    }
+}
+
+:root {
+    --body-font-family: "Work Sans", Helvetica;
+    --body-font-size: 13px;
+    --body-font-style: normal;
+    --body-font-weight: 400;
+    --body-letter-spacing: -0.26px;
+    --body-line-height: normal;
+    --fuschia-100: rgba(239, 93, 168, 1);
+    --fuschia-60: rgba(252, 221, 236, 1);
+    --fuschia-80: rgba(241, 120, 182, 1);
+    --header-1-font-family: "Work Sans", Helvetica;
+    --header-1-font-size: 34px;
+    --header-1-font-style: normal;
+    --header-1-font-weight: 700;
+    --header-1-letter-spacing: -0.68px;
+    --header-1-line-height: normal;
+    --header-2-font-family: "Work Sans", Helvetica;
+    --header-2-font-size: 20px;
+    --header-2-font-style: normal;
+    --header-2-font-weight: 700;
+    --header-2-letter-spacing: -0.4px;
+    --header-2-line-height: normal;
+    --iris-100: rgba(93, 95, 239, 1);
+    --iris-60: rgba(165, 166, 246, 1);
+    --iris-80: rgba(120, 121, 241, 1);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes image-glow {
+    0% {
+        opacity: 0;
+        animation-timing-function: cubic-bezier(0.74, 0.25, 0.76, 1);
+    }
+
+    10% {
+        opacity: 0.7;
+        animation-timing-function: cubic-bezier(0.12, 0.01, 0.08, 0.99);
+    }
+
+    to {
+        opacity: 0.4;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes shimmer {
+
+    0%,
+    90%,
+    to {
+        background-position: calc(-100% - 500px) 0;
+    }
+
+    30%,
+    60% {
+        background-position: calc(100% + 500px) 0;
+    }
+}
+
+@keyframes float-bob {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+}
+
+@layer utilities {
+    .animate-float-bob {
+        animation: float-bob 6s ease-in-out infinite;
+    }
+
+
+    /* Animation Utilities */
+    [data-animate] {
+        opacity: 0;
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        will-change: opacity, transform;
+    }
+
+    [data-animate="fade-up"] {
+        transform: translateY(30px);
+    }
+
+    [data-animate="fade-left"] {
+        transform: translateX(30px);
+    }
+
+    [data-animate="fade-right"] {
+        transform: translateX(-30px);
+    }
+
+    [data-animate="card-pop"] {
+        transform: scale(0.92);
+    }
+
+    [data-animate].in-view {
+        opacity: 1;
+        transform: none;
+    }
+
+    /* Stagger delays if needed - generic implementation */
+    .delay-100 {
+        transition-delay: 100ms;
+    }
+
+    .delay-200 {
+        transition-delay: 200ms;
+    }
+
+    .delay-300 {
+        transition-delay: 300ms;
+    }
+}

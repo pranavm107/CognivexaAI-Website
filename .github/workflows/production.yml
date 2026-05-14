@@ -1,0 +1,50 @@
+name: CognivexaAI Enterprise CI/CD
+
+on:
+  push:
+    branches: [ main, staging ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies (Backend)
+        run: cd backend && npm ci
+
+      - name: Linting
+        run: cd backend && npm run lint
+
+      - name: Security Audit
+        run: cd backend && npm audit fix --audit-level=high
+
+      - name: Build Validation (Frontend)
+        run: |
+          npm install
+          npm run build
+
+  deploy-staging:
+    needs: validate
+    if: github.ref == 'refs/heads/staging'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Railway (Staging)
+        run: echo "Deploying to staging environment..."
+        # In a real setup, you'd use railway-deploy action
+
+  deploy-production:
+    needs: validate
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Railway (Production)
+        run: echo "Deploying to production environment..."
