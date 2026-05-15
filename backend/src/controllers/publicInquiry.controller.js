@@ -1,4 +1,4 @@
-import Inquiry from '../models/Inquiry.model.js';
+import Inquiry from '../models/inquiry.model.js';
 import catchAsync from '../utils/catchAsync.js';
 import { StatusCodes } from 'http-status-codes';
 import { emitToAdmin } from '../services/socket.service.js';

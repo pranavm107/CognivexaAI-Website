@@ -2,7 +2,7 @@ import { StatusCodes } from 'http-status-codes';
 import catchAsync from '../utils/catchAsync.js';
 import adminService from '../services/admin.service.js';
 import Booking from '../models/Booking.model.js';
-import Inquiry from '../models/Inquiry.model.js';
+import Inquiry from '../models/inquiry.model.js';
 import queryHelper from '../utils/query.helper.js';
 
 const getDashboard = catchAsync(async (req, res) => {

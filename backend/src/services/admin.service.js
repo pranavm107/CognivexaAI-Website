@@ -1,5 +1,5 @@
 import Booking from '../models/Booking.model.js';
-import Inquiry from '../models/Inquiry.model.js';
+import Inquiry from '../models/inquiry.model.js';
 import dayjs from 'dayjs';
 
 const getDashboardStats = async (range = 'month') => {
