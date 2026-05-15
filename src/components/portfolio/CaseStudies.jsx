@@ -75,7 +75,7 @@ const CaseStudies = () => {
         : caseStudiesData.filter(p => p.category === activeFilter);
 
     return (
-        <section id="case-studies" className="py-24 bg-[#030712] relative">
+        <section id="case-studies" className="py-10 md:py-undefined bg-[#030712] relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-16">

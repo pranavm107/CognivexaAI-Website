@@ -28,7 +28,7 @@ const promises = [
 
 const CommitmentSection = () => {
   return (
-    <section className="py-32 bg-white relative overflow-hidden" id="our-commitment">
+    <section className="py-10 md:py-undefined bg-white relative overflow-hidden" id="our-commitment">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,_rgba(124,58,237,0.03)_0%,_transparent_70%)]" />
       </div>

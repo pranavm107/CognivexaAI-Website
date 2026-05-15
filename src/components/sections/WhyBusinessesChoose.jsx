@@ -38,7 +38,7 @@ const WhyWorkWithUs = () => {
         <section className="py-[80px]" id="why-work" aria-labelledby="why-work-title">
             <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
                 <ScrollReveal variant="heading" className="text-center mb-[32px]">
-                    <h2 id="why-work-title" className="text-[32px] font-extrabold text-[#0b1220] mb-2">Why Businesses Choose CognivexaAI</h2>
+                    <h2 id="why-work-title" className="text-[clamp(21px,4vw,32px)] font-extrabold text-[#0b1220] mb-2">Why Businesses Choose CognivexaAI</h2>
                 </ScrollReveal>
 
                 <div className="flex flex-col md:flex-row gap-[28px] w-full max-w-[1200px] mx-auto md:h-[880px] p-4">

@@ -217,7 +217,7 @@ const ClientDashboard = () => {
               ) : activeProjects.length > 0 ? activeProjects.map((project) => (
                 <ProjectCard key={project._id} project={project} />
               )) : (
-                <div className="col-span-2 py-20 bg-slate-50 rounded-[2.5rem] border border-dashed border-slate-200 flex flex-col items-center justify-center text-center">
+                <div className="col-span-2 py-10 md:py-undefined bg-slate-50 rounded-[2.5rem] border border-dashed border-slate-200 flex flex-col items-center justify-center text-center">
                   <Box className="w-12 h-12 text-slate-200 mb-4" />
                   <p className="text-slate-500 font-bold mb-4">No active projects in this workspace.</p>
                   <button onClick={() => setIsProjectRequestModalOpen(true)} className="text-sm font-black text-indigo-600 uppercase tracking-widest">Initiate Project Request</button>

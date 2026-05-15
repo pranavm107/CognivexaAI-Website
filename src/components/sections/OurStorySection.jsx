@@ -37,7 +37,7 @@ text-[#7C5CFF] mb-8 uppercase">
                     </p>
 
                     {/* Content Grid */}
-                    <div className="grid lg:grid-cols-2 gap-20 items-start">
+                    <div className="grid lg:grid-cols-2 gap-6 md:p-undefined items-start">
 
                         {/* Story Text */}
                         <div className="text-gray-600 text-lg leading-relaxed space-y-6 mt-28">
@@ -101,7 +101,7 @@ text-[#7C5CFF] mb-8 uppercase">
                 </motion.p>
 
                 {/* Metrics */}
-                <div className="flex justify-center gap-20 mt-16 text-center">
+                <div className="flex justify-center gap-6 md:p-undefined mt-16 text-center">
                     <div>
                         <p className="text-3xl font-semibold bg-gradient-to-r from-[#5B8CFF] via-[#7C5CFF] to-[#B84CFF] bg-clip-text text-transparent">
                             Focused

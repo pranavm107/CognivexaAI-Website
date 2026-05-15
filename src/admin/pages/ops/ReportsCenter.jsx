@@ -102,7 +102,7 @@ const ReportsCenter = () => {
                View All <ChevronRight className="w-3 h-3" />
             </button>
          </div>
-         <div className="p-20 text-center space-y-4 opacity-30">
+         <div className="p-6 md:p-undefined text-center space-y-4 opacity-30">
             <FileText className="w-12 h-12 mx-auto text-slate-300" />
             <p className="text-sm font-black uppercase tracking-widest text-slate-400">Archive Clear</p>
          </div>

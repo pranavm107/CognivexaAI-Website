@@ -98,7 +98,7 @@ const Services = () => {
                 }
             `}</style>
             {/* SERVICES HERO */}
-            <section className="relative min-h-[80vh] flex items-center bg-white overflow-hidden py-20" aria-label="Services hero">
+            <section className="relative min-h-[80vh] flex items-center bg-white overflow-hidden py-10 md:py-undefined" aria-label="Services hero">
 
                 {/* gradient background */}
                 <div className="absolute inset-0 w-full h-full opacity-40">
@@ -119,13 +119,13 @@ const Services = () => {
                 <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
 
                     <ScrollReveal variant="heading">
-                        <h1 className="text-[42px] md:text-[64px] leading-[1.1] font-bold text-[#1a1a1a] mb-[24px] tracking-tight">
+                        <h1 className="text-[clamp(27px,4vw,42px)] md:text-[clamp(42px,4vw,64px)] leading-[1.1] font-bold text-[#1a1a1a] mb-[24px] tracking-tight">
                             AI Solutions That Grow<br />
                             Your Business
                         </h1>
                     </ScrollReveal>
 
-                    <p className="text-[18px] md:text-[20px] leading-[1.6] text-gray-600 mb-[40px]">
+                    <p className="text-[18px] md:text-[clamp(13px,4vw,20px)] leading-[1.6] text-gray-600 mb-[40px]">
                         We build AI-powered tools, automation systems, and scalable applications tailored to your business needs.
                     </p>
 
@@ -143,7 +143,7 @@ const Services = () => {
             </section>
 
             {/* Services Grid */}
-            <section className="py-24 bg-gray-50/30 relative overflow-hidden" id="services">
+            <section className="py-10 md:py-undefined bg-gray-50/30 relative overflow-hidden" id="services">
                 {/* Background decorative elements */}
                 <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
                     <div className="absolute -top-[10%] -left-[5%] w-[40%] h-[40%] bg-purple-100/30 blur-[120px] rounded-full"></div>
@@ -153,10 +153,10 @@ const Services = () => {
                 <div className="w-full px-4 sm:px-6 max-w-[1248px] mx-auto relative z-10">
                     <div className="text-center mb-20">
                         <ScrollReveal variant="heading">
-                            <h2 className="text-[36px] md:text-[52px] font-bold text-[#140a4f] mb-6 tracking-tight">
+                            <h2 className="text-[clamp(23px,4vw,36px)] md:text-[clamp(34px,4vw,52px)] font-bold text-[#140a4f] mb-6 tracking-tight">
                                 Our Services
                             </h2>
-                            <p className="text-[18px] md:text-[20px] text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                            <p className="text-[18px] md:text-[clamp(13px,4vw,20px)] text-gray-600 max-w-2xl mx-auto leading-relaxed">
                                 Comprehensive solutions to design, build, and scale modern digital products.
                             </p>
                         </ScrollReveal>
@@ -168,7 +168,7 @@ const Services = () => {
                                 <div key={i} className="h-[350px] bg-white/50 animate-pulse rounded-[24px] border border-gray-100"></div>
                             ))
                         ) : services.length === 0 ? (
-                            <div className="col-span-1 md:col-span-2 lg:col-span-3 text-center py-20">
+                            <div className="col-span-1 md:col-span-2 lg:col-span-3 text-center py-10 md:py-undefined">
                                 <h3 className="text-xl font-bold text-gray-500">No services available</h3>
                             </div>
                         ) : (
@@ -211,7 +211,7 @@ const Services = () => {
                             <div className="mt-16 text-center relative">
                                 {/* Visual continuity gradient */}
                                 {!isExpanded && (
-                                    <div className="absolute -top-24 left-0 w-full h-24 bg-gradient-to-t from-gray-50/80 to-transparent pointer-events-none z-10"></div>
+                                    <div className="absolute -top-6 md:p-undefined left-0 w-full h-24 bg-gradient-to-t from-gray-50/80 to-transparent pointer-events-none z-10"></div>
                                 )}
                                 
                                 <button
@@ -235,7 +235,7 @@ const Services = () => {
                     <div className="text-center mb-16">
                         <ScrollReveal variant="heading">
                             <span className="text-[#a855f7] text-sm font-bold tracking-[0.2em] uppercase mb-4 block">OUR ADVANTAGE</span>
-                            <h2 className="text-[48px] font-bold text-[#0a0a0a] mb-4 tracking-tight">
+                            <h2 className="text-[clamp(31px,4vw,48px)] font-bold text-[#0a0a0a] mb-4 tracking-tight">
                                 Why Choose CognivexaAI
                             </h2>
                             <p className="text-[18px] text-gray-500 max-w-2xl mx-auto">
@@ -278,7 +278,7 @@ const Services = () => {
                     <div className="text-center mb-20">
                         <ScrollReveal variant="heading">
                             <span className="text-[#a855f7] text-sm font-bold tracking-[0.2em] uppercase mb-4 block">OUR PROCESS</span>
-                            <h2 className="text-[48px] font-bold text-[#0a0a0a] mb-4 tracking-tight">
+                            <h2 className="text-[clamp(31px,4vw,48px)] font-bold text-[#0a0a0a] mb-4 tracking-tight">
                                 How We Build Your Solution
                             </h2>
                             <p className="text-[18px] text-gray-500 max-w-2xl mx-auto">
@@ -301,7 +301,7 @@ const Services = () => {
                                 <ScrollReveal key={idx} variant="card" delay={idx * 0.1}>
                                     <div className="flex flex-col items-center text-center group">
                                         <div className="w-16 h-16 rounded-full bg-white border-2 border-[#a855f7] flex items-center justify-center mb-6 relative transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-[#a855f7] group-hover:to-[#7c3aed] group-hover:shadow-lg group-hover:shadow-purple-200">
-                                            <span className="text-[20px] font-bold text-[#7c3aed] group-hover:text-white transition-colors duration-300">
+                                            <span className="text-[clamp(13px,4vw,20px)] font-bold text-[#7c3aed] group-hover:text-white transition-colors duration-300">
                                                 {item.step}
                                             </span>
                                         </div>
@@ -330,7 +330,7 @@ const Services = () => {
                     <div className="text-center mb-16 pt-[80px]">
                         <ScrollReveal variant="heading">
                             <span className="text-[#a855f7] text-[12px] font-bold tracking-[0.2em] uppercase mb-4 block">OUR WORK</span>
-                            <h2 className="text-[56px] font-[800] text-[#0a0a0a] mb-4 tracking-tight leading-tight">
+                            <h2 className="text-[clamp(36px,4vw,56px)] font-[800] text-[#0a0a0a] mb-4 tracking-tight leading-tight">
                                 Work That Speaks
                             </h2>
                             <p className="text-[18px] text-[#6b7280] max-w-2xl mx-auto">
@@ -345,7 +345,7 @@ const Services = () => {
                                 <ShowcaseCard key={project._id || index} project={project} index={index} />
                             ))
                         ) : (
-                            <div className="col-span-full py-20 text-center">
+                            <div className="col-span-full py-10 md:py-undefined text-center">
                                 <p className="text-gray-400 italic">Our showcase projects are being updated...</p>
                             </div>
                         )}
@@ -354,7 +354,7 @@ const Services = () => {
                     {/* CTA Row */}
                     <div className="text-center">
                         <ScrollReveal variant="heading">
-                            <h4 className="text-[20px] font-bold text-[#0a0a0a] mb-6">Want to see more?</h4>
+                            <h4 className="text-[clamp(13px,4vw,20px)] font-bold text-[#0a0a0a] mb-6">Want to see more?</h4>
                             <Link to="/portfolio" className="inline-flex items-center px-8 py-3 rounded-full bg-gradient-to-r from-[#7c3aed] to-[#a855f7] text-white font-bold text-[16px] shadow-lg hover:brightness-110 hover:scale-[1.05] transition-all duration-300">
                                 View Full Portfolio <ArrowRight className="w-5 h-5 ml-2" />
                             </Link>
@@ -402,7 +402,7 @@ const Services = () => {
                                         <div className="h-[1px] w-8 bg-purple-500/30"></div>
                                     </div>
 
-                                    <h2 className="text-[40px] md:text-[56px] font-[800] text-white mb-6 leading-[1.1] tracking-tight">
+                                    <h2 className="text-[clamp(26px,4vw,40px)] md:text-[clamp(36px,4vw,56px)] font-[800] text-white mb-6 leading-[1.1] tracking-tight">
                                         Ready to Turn Your Idea Into <span className="bg-gradient-to-r from-[#a855f7] to-[#3b82f6] bg-clip-text text-transparent">Reality?</span>
                                     </h2>
                                     

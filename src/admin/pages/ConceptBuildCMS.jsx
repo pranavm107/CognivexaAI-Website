@@ -32,7 +32,7 @@ const initialForm = {
 const BuildPreview = ({ build, isLeft = true }) => {
   return (
     <div className="bg-white p-12 overflow-hidden w-full max-w-5xl mx-auto rounded-[2rem] border border-slate-100 shadow-2xl">
-      <div className={`flex flex-col ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-16 lg:gap-24`}>
+      <div className={`flex flex-col ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-6 md:gap-undefined lg:gap-6 md:p-undefined`}>
         <div className="w-full lg:w-3/5 group relative">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-purple-200/20 blur-[80px] rounded-full -z-10 opacity-100"></div>
           <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white/40 backdrop-blur-md p-2 border border-white/20">

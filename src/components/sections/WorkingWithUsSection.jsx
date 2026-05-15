@@ -172,7 +172,7 @@ export default function WorkingWithUsSection() {
 
                         <motion.h2
                             variants={fadeUp}
-                            className="mt-4 text-[34px] lg:text-[52px] leading-[1.05] font-extrabold text-[#0f0f14]"
+                            className="mt-4 text-[clamp(22px,4vw,34px)] lg:text-[clamp(34px,4vw,52px)] leading-[1.05] font-extrabold text-[#0f0f14]"
                         >
                             Build with clarity.
                             <span className="block bg-gradient-to-r from-[#6C4CF4] to-[#FF4FD8] bg-clip-text text-transparent">

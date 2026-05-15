@@ -81,7 +81,7 @@ const ContactSection = () => {
                     {/* LEFT COLUMN */}
                     <div ref={leftColRef} className="animate-on-scroll animate-left space-y-10">
                         <div>
-                            <h2 id="contact-heading" className="text-[40px] font-extrabold text-[#0a0a0a] leading-tight">
+                            <h2 id="contact-heading" className="text-[clamp(26px,4vw,40px)] font-extrabold text-[#0a0a0a] leading-tight">
                                 Start Your Project
                             </h2>
                             <div className="gradient-underline"></div>

@@ -187,7 +187,7 @@ const OurEdge = () => {
           >
             {/* Gradient Border/Glow effect */}
             <div className="absolute inset-0 border border-purple-500/0 group-hover:border-purple-500/20 rounded-[2rem] transition-colors pointer-events-none" />
-            <div className="absolute -top-24 -right-24 w-64 h-64 bg-purple-100/30 blur-[60px] rounded-full group-hover:bg-purple-200/40 transition-colors" />
+            <div className="absolute -top-6 md:p-undefined -right-24 w-64 h-64 bg-purple-100/30 blur-[60px] rounded-full group-hover:bg-purple-200/40 transition-colors" />
 
             <div className="flex flex-col lg:flex-row gap-10 relative z-10 h-full">
               <div className="flex-1 space-y-6">

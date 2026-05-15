@@ -253,7 +253,7 @@ const ServicesWorkspace = () => {
           ))}
         </div>
       ) : (activeTab === 'services' ? services.length === 0 : showcaseProjects.length === 0) ? (
-        <div className="py-32 flex flex-col items-center justify-center bg-white rounded-[3rem] border border-dashed border-slate-200">
+        <div className="py-10 md:py-undefined flex flex-col items-center justify-center bg-white rounded-[3rem] border border-dashed border-slate-200">
           <Sparkles className="w-16 h-16 text-slate-200 mb-6" />
           <h3 className="text-xl font-bold text-slate-900">No {activeTab === 'services' ? 'Services' : 'Projects'}</h3>
           <p className="text-slate-500 mt-2">Create a {activeTab === 'services' ? 'service' : 'project'} to display on the website.</p>

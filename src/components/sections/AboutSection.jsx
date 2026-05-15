@@ -11,7 +11,7 @@ const AboutSection = () => {
             <div className="absolute bottom-0 left-10 w-[400px] h-[400px] bg-blue-100/20 blur-[100px] rounded-full -z-10"></div>
 
             <div className="max-w-7xl mx-auto px-6 md:px-12">
-                <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+                <div className="flex flex-col lg:flex-row items-center gap-6 md:gap-undefined lg:gap-6 md:p-undefined">
                     
                     {/* LEFT SIDE: Content */}
                     <div className="lg:w-1/2 space-y-8">

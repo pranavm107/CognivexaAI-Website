@@ -58,7 +58,7 @@ export const StickyScroll = ({ content, contentClassName }) => {
             <div className="relative">
                 {/* ✅ Sticky overlay */}
                 <div className="pointer-events-none sticky top-0 h-[750px]">
-                    <div className="grid grid-cols-1 lg:grid-cols-[520px_1fr] gap-16 px-4 sm:px-6 lg:px-10 h-full items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-[520px_1fr] gap-6 md:gap-undefined px-4 sm:px-6 lg:px-10 h-full items-center">
                         {/* ✅ LEFT TEXT ANIMATION (Perfect UP/DOWN) */}
                         <div className="hidden lg:block pointer-events-auto">
                             <AnimatePresence mode="wait" custom={direction}>
@@ -76,7 +76,7 @@ export const StickyScroll = ({ content, contentClassName }) => {
                                     })}
                                     transition={{ duration: 0.35, ease: "easeInOut" }}
                                 >
-                                    <h3 className="text-[38px] font-bold text-[#0b1220] leading-[1.15]">
+                                    <h3 className="text-[clamp(25px,4vw,38px)] font-bold text-[#0b1220] leading-[1.15]">
                                         {content[activeCard].title}
                                     </h3>
 
@@ -110,7 +110,7 @@ export const StickyScroll = ({ content, contentClassName }) => {
                 <div className="lg:hidden flex flex-col gap-10 px-4 sm:px-6 py-10">
                     {content.map((item, index) => (
                         <div key={item.title + index} className="rounded-2xl border bg-white p-6">
-                            <h3 className="text-[22px] font-bold text-[#0b1220]">{item.title}</h3>
+                            <h3 className="text-[clamp(14px,4vw,22px)] font-bold text-[#0b1220]">{item.title}</h3>
                             <div className="mt-3 text-[15px] leading-[1.7] text-gray-600">
                                 {item.description}
                             </div>

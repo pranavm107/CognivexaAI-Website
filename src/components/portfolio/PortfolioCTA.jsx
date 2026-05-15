@@ -15,7 +15,7 @@ const PortfolioCTA = () => {
     };
 
     return (
-        <section className="py-24 bg-white px-6">
+        <section className="py-10 md:py-undefined bg-white px-6">
             <div className="max-w-4xl mx-auto">
                 <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-[#7C3AED] to-[#4338CA] p-12 md:p-16 text-center shadow-2xl shadow-purple-500/20">
                     {/* Noise Texture Overlay */}
@@ -40,7 +40,7 @@ const PortfolioCTA = () => {
                             Open to New Projects
                         </div>
 
-                        <h2 className="text-3xl md:text-[40px] font-bold text-white mb-6 leading-tight">
+                        <h2 className="text-3xl md:text-[clamp(26px,4vw,40px)] font-bold text-white mb-6 leading-tight">
                             Let's Build Something <br /> That Actually Works
                         </h2>
                         

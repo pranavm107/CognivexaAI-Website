@@ -114,7 +114,7 @@ const WhyWorkWithUs = () => {
     }, []);
 
     return (
-        <section className="py-32 bg-[#050508] relative overflow-hidden">
+        <section className="py-10 md:py-undefined bg-[#050508] relative overflow-hidden">
             {/* Radial Glow */}
             <div 
                 className="absolute inset-0 pointer-events-none"
@@ -184,7 +184,7 @@ const WhyWorkWithUs = () => {
                             <div className="text-[#a855f7] text-[11px] font-bold uppercase tracking-[0.2em] mb-3">
                                 WHY US
                             </div>
-                            <h2 className="text-[42px] font-extrabold text-white mb-4 leading-tight">
+                            <h2 className="text-[clamp(27px,4vw,42px)] font-extrabold text-white mb-4 leading-tight">
                                 Built Different.{' '}
                                 <span className="bg-gradient-to-br from-[#a855f7] to-[#3b82f6] bg-clip-text text-transparent">
                                     Delivered Better.

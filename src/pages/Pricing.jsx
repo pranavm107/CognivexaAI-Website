@@ -99,7 +99,7 @@ export default function Pricing() {
             <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#a855f7] mb-6">
               TRANSPARENT PRICING
             </span>
-            <h1 className="text-[40px] md:text-[56px] font-[800] leading-[1.1] mb-8 text-[#0f172a] tracking-wide">
+            <h1 className="text-[clamp(26px,4vw,40px)] md:text-[clamp(36px,4vw,56px)] font-[800] leading-[1.1] mb-8 text-[#0f172a] tracking-wide">
               From websites to <span className="bg-gradient-to-br from-[#7c3aed] to-[#6366f1] bg-clip-text text-transparent">intelligent AI</span>
               <br className="hidden md:block" /> and real-world <span className="bg-gradient-to-br from-[#0d9488] to-[#14b8a6] bg-clip-text text-transparent">IoT systems</span> —<br className="hidden md:block" /> we build complete digital ecosystems.
             </h1>
@@ -232,7 +232,7 @@ export default function Pricing() {
 
       {/* 4. SMART SYSTEM PACKAGE (Premium Add-On) */}
       {smartPackage.active && (
-        <section className="py-16 px-4 relative z-10">
+        <section className="py-10 md:py-undefined px-4 relative z-10">
           <div className="max-w-5xl mx-auto">
             <div className="relative rounded-[24px] p-8 md:p-12 overflow-hidden border border-[rgba(124,58,237,0.2)] shadow-sm"
               style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.08), rgba(20,184,166,0.08))' }}>
@@ -268,13 +268,13 @@ export default function Pricing() {
       )}
 
       {/* 5. GUIDED SELECTOR */}
-      <section className="py-24 px-4 relative z-10 bg-[#ffffff] overflow-hidden">
+      <section className="py-10 md:py-undefined px-4 relative z-10 bg-[#ffffff] overflow-hidden">
         {/* Soft grid & glow */}
         <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(rgba(124,58,237,0.05)_1px,transparent_1px)] bg-[size:28px_28px] opacity-60 z-0" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[rgba(124,58,237,0.06)] blur-[100px] rounded-full pointer-events-none z-0" />
 
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <h2 className="text-[#0f172a] text-[32px] md:text-4xl font-[800] tracking-wide mb-4">Not sure what you need?</h2>
+          <h2 className="text-[#0f172a] text-[clamp(21px,4vw,32px)] md:text-4xl font-[800] tracking-wide mb-4">Not sure what you need?</h2>
           <p className="text-[#64748b] text-lg mb-14">Tell us your goal and we'll suggest the right plan.</p>
           
           <motion.div 
@@ -350,7 +350,7 @@ export default function Pricing() {
       </section>
 
       {/* 6. CONVERSION STRIP */}
-      <section className="py-20 px-4 bg-[#f8fafc] border-y border-[#e2e8f0] relative z-10">
+      <section className="py-10 md:py-undefined px-4 bg-[#f8fafc] border-y border-[#e2e8f0] relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-2xl font-semibold mb-8 text-[#0f172a]">Custom solutions available based on your requirements.</h3>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -378,7 +378,7 @@ export default function Pricing() {
       </div>
 
       {/* 8. FINAL CTA */}
-      <section className="py-24 px-4 bg-white relative overflow-hidden border-t border-[#e2e8f0] z-10">
+      <section className="py-10 md:py-undefined px-4 bg-white relative overflow-hidden border-t border-[#e2e8f0] z-10">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[rgba(124,58,237,0.06)] blur-[100px] rounded-full" />
         </div>

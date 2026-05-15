@@ -116,7 +116,7 @@ const FEATURES = [
 const DashboardMock = () => (
     <div className="w-full h-full p-6 flex flex-col gap-4 relative overflow-hidden">
         {/* Glass Overlay Shine */}
-        <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -top-6 md:p-undefined -right-20 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
 
         {/* Top Stat Cards */}
         <div className="grid grid-cols-3 gap-3">
@@ -318,7 +318,7 @@ const StackedCard = ({ item, index, total, scrollYProgress, reduceMotion }) => {
                 <div className="flex-1 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] relative z-10">
 
                     {/* Background Big Number */}
-                    <div className="absolute -top-6 right-6 text-[220px] font-bold text-black/[0.03] select-none pointer-events-none tracking-tighter mix-blend-multiply">
+                    <div className="absolute -top-6 right-6 text-[clamp(143px,4vw,220px)] font-bold text-black/[0.03] select-none pointer-events-none tracking-tighter mix-blend-multiply">
                         0{index + 1}
                     </div>
 
@@ -333,7 +333,7 @@ const StackedCard = ({ item, index, total, scrollYProgress, reduceMotion }) => {
                             </div>
 
                             {/* Title */}
-                            <h3 className="text-4xl md:text-5xl lg:text-[54px] font-bold text-[#0A0A0A] mb-6 leading-[1.05] tracking-tight">
+                            <h3 className="text-4xl md:text-5xl lg:text-[clamp(35px,4vw,54px)] font-bold text-[#0A0A0A] mb-6 leading-[1.05] tracking-tight">
                                 {item.title}
                             </h3>
 
@@ -394,7 +394,7 @@ export default function LifeAtEvolvex() {
             </div>
 
             {/* Sticky Container */}
-            <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden px-4">
+            <div className="sticky top-0 min-h-[100svh] w-full flex items-center justify-center overflow-hidden px-4">
                 <div className="relative w-full h-full flex items-center justify-center">
                     {FEATURES.map((feature, idx) => (
                         <StackedCard

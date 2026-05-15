@@ -201,7 +201,7 @@ const Invoices = () => {
                 </tr>
               )) : (
                 <tr>
-                  <td colSpan={6} className="px-10 py-32 text-center text-slate-400 font-bold">
+                  <td colSpan={6} className="px-10 py-10 md:py-undefined text-center text-slate-400 font-bold">
                     No fiscal records matched your criteria.
                   </td>
                 </tr>

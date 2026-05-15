@@ -108,10 +108,10 @@ const OurApproach = () => {
             <div className="absolute top-1/4 -left-[250px] w-[500px] h-[500px] bg-[#a855f7]/[0.04] blur-[80px] rounded-full pointer-events-none" />
 
             <div className="max-w-[1200px] mx-auto px-6 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:p-undefined items-start">
                     
                     {/* LEFT SIDE */}
-                    <div className="lg:sticky lg:top-32">
+                    <div className="lg:sticky lg:top-6 md:p-undefined">
                         <motion.div 
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -128,7 +128,7 @@ const OurApproach = () => {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
-                            className="text-[40px] md:text-[52px] font-[800] text-[#0a0a0a] mb-8 leading-[1.1]"
+                            className="text-[clamp(26px,4vw,40px)] md:text-[clamp(34px,4vw,52px)] font-[800] text-[#0a0a0a] mb-8 leading-[1.1]"
                         >
                             {["Our Approach to", "Building Products"].map((line, i) => (
                                 <motion.span

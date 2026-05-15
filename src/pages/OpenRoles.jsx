@@ -131,7 +131,7 @@ const OpenRoles = () => {
                 <div className="relative z-10 w-full">
                     <div className="mx-auto w-full max-w-[1200px] px-5 grid grid-cols-1 items-center">
                         <ScrollReveal variant="heading" className="max-w-[720px] mx-auto lg:mx-0 text-center lg:text-left">
-                            <h1 className="text-[38px] md:text-[48px] lg:text-[56px] font-extrabold leading-[1.15] text-[#121212] mb-[24px]">
+                            <h1 className="text-[clamp(25px,4vw,38px)] md:text-[clamp(31px,4vw,48px)] lg:text-[clamp(36px,4vw,56px)] font-extrabold leading-[1.15] text-[#121212] mb-[24px]">
                                 Explore Opportunities at <br className="hidden md:block" /> Evolvex AI
                             </h1>
 
@@ -156,7 +156,7 @@ const OpenRoles = () => {
                 <div className="w-full max-w-[1200px] mx-auto px-5">
 
                     <header className="text-center mb-[56px]">
-                        <h2 className="text-[28px] md:text-[36px] font-bold text-[#111] mb-[12px]">Current Open Positions</h2>
+                        <h2 className="text-[clamp(18px,4vw,28px)] md:text-[clamp(23px,4vw,36px)] font-bold text-[#111] mb-[12px]">Current Open Positions</h2>
                         <p className="text-[15px] md:text-[16px] leading-[1.6] text-[#555] max-w-[600px] mx-auto">
                             We are looking for talented and motivated individuals to join our growing team.
                             Explore the openings below and apply to be part of our journey.
@@ -241,8 +241,8 @@ const OpenRoles = () => {
             {/* End Note */}
             <section className="py-[60px] md:py-[80px] bg-white">
                 <div className='border-y border-dashed border-slate-200 w-full max-w-5xl mx-auto px-10 sm:px-16 my-10'>
-                    <div className="flex flex-col text-center items-center justify-center gap-6 px-4 md:px-10 border-x border-dashed border-slate-200 py-16 sm:py-20 -mt-10 -mb-10 w-full">
-                        <h2 className="text-[22px] md:text-[28px] font-bold text-[#1a1a1a] mb-[8px]">
+                    <div className="flex flex-col text-center items-center justify-center gap-6 px-4 md:px-10 border-x border-dashed border-slate-200 py-10 md:py-undefined sm:py-20 -mt-10 -mb-10 w-full">
+                        <h2 className="text-[clamp(14px,4vw,22px)] md:text-[clamp(18px,4vw,28px)] font-bold text-[#1a1a1a] mb-[8px]">
                             Thank you for exploring our current opportunities.
                         </h2>
                         <p className="text-[15px] md:text-[16px] leading-[1.7] text-[#4a4a4a] max-w-[720px] mx-auto">
@@ -255,12 +255,12 @@ const OpenRoles = () => {
 
             <section id="contact" className="py-[96px] bg-white relative overflow-hidden" aria-labelledby="contact-heading">
                 <div className="w-full max-w-[1200px] mx-auto px-5 relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-6 md:p-undefined items-center">
                         <ScrollReveal variant="featureLeft">
                             <header className="mb-[40px]">
-                                <h2 id="contact-heading" className="text-[40px] lg:text-[48px] font-medium text-[#6C4CF0] mb-6 leading-tight">
+                                <h2 id="contact-heading" className="text-[clamp(26px,4vw,40px)] lg:text-[clamp(31px,4vw,48px)] font-medium text-[#6C4CF0] mb-6 leading-tight">
                                     Contact Us</h2>
-                                <p className="text-[#494949] text-[20px] leading-[1.6]">We are here to assist you with services, <br />
+                                <p className="text-[#494949] text-[clamp(13px,4vw,20px)] leading-[1.6]">We are here to assist you with services, <br />
                                     collaborations, or general inquiries.Our team <br /> responds within 24 hours.</p>
                             </header>
                             <ul className="space-y-8">
@@ -269,7 +269,7 @@ const OpenRoles = () => {
                                         <img src="/assets/svg/Mail.svg" alt="Email" className="w-6 h-6 object-contain" />
                                     </div>
                                     <div>
-                                        <span className="block text-[#000000] text-[20px] font-regular">contact@evolvex.ai</span>
+                                        <span className="block text-[#000000] text-[clamp(13px,4vw,20px)] font-regular">contact@evolvex.ai</span>
                                     </div>
                                 </li>
                                 <li className="flex items-start" style={{ gap: '45px' }}>
@@ -277,7 +277,7 @@ const OpenRoles = () => {
                                         <img src="/assets/svg/Location-.svg" alt="Location" className="w-6 h-6 object-contain" />
                                     </div>
                                     <div>
-                                        <span className="block text-[#000000] text-[20px] font-regular">venketasa colony, Pollachi<br />Coimbatore
+                                        <span className="block text-[#000000] text-[clamp(13px,4vw,20px)] font-regular">venketasa colony, Pollachi<br />Coimbatore
                                             - 642000</span>
                                     </div>
                                 </li>
@@ -286,7 +286,7 @@ const OpenRoles = () => {
                                         <img src="/assets/svg/Mobile.svg" alt="Phone" className="w-6 h-6 object-contain" />
                                     </div>
                                     <div>
-                                        <span className="block text-[#000000] text-[20px] font-regular">+91 123 654 7890</span>
+                                        <span className="block text-[#000000] text-[clamp(13px,4vw,20px)] font-regular">+91 123 654 7890</span>
                                     </div>
                                 </li>
                             </ul>

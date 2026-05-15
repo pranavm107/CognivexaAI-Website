@@ -106,7 +106,7 @@ const Careers = () => {
                     className="w-full max-w-[1200px] mx-auto px-5 relative mt-[180px] grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-[60px] lg:gap-[80px] items-center text-center lg:text-left">
 
                     <div className="mx-auto lg:mx-0">
-                        <h1 className="text-[40px] lg:text-[64px] font-bold leading-[1.1] text-[#111] mb-[24px]">
+                        <h1 className="text-[clamp(26px,4vw,40px)] lg:text-[clamp(42px,4vw,64px)] font-bold leading-[1.1] text-[#111] mb-[24px]">
                             Join Our Team
                         </h1>
 
@@ -163,7 +163,7 @@ const Careers = () => {
 
                         {/* Foreground Heading */}
                         <div className="relative z-10">
-                            <h2 className="text-[38px] md:text-[48px] lg:text-[64px]
+                            <h2 className="text-[clamp(25px,4vw,38px)] md:text-[clamp(31px,4vw,48px)] lg:text-[clamp(42px,4vw,64px)]
           font-extrabold text-[#111] tracking-tight">
                                 The Evolvex Experience
                             </h2>
@@ -205,7 +205,7 @@ const Careers = () => {
 
                         <div className="relative z-20 flex flex-col items-center text-center px-4">
                             <ScrollReveal variant="heading">
-                                <h1 className="text-[38.4px] md:text-[48px] lg:text-[64px]
+                                <h1 className="text-[38.4px] md:text-[clamp(31px,4vw,48px)] lg:text-[clamp(42px,4vw,64px)]
                 font-extrabold text-[#1a1a1a] mt-[12px]
                 leading-[1.15] tracking-[0.2%]">
                                     Why Join Us?
@@ -230,7 +230,7 @@ const Careers = () => {
                                     </svg>
                                 </div>
                                 <p
-                                    className="text-[20px] lg:text-[20px] leading-[1.8] text-[#555] mt-[20px] text-center max-w-[780px] mx-auto relative z-10">
+                                    className="text-[clamp(13px,4vw,20px)] lg:text-[clamp(13px,4vw,20px)] leading-[1.8] text-[#555] mt-[20px] text-center max-w-[780px] mx-auto relative z-10">
                                     We believe in empowering talented individuals to reach their full potential. <br></br> At Evolvex, you will find opportunities to learn, lead, and make a lasting impact.
                                 </p>
                             </ScrollReveal>
@@ -271,7 +271,7 @@ const Careers = () => {
 
                         <ScrollReveal variant="heading" className="relative z-20 flex flex-col items-center text-center px-4">
 
-                            <h1 className="text-[34px] md:text-[48px] lg:text-[64px]
+                            <h1 className="text-[clamp(22px,4vw,34px)] md:text-[clamp(31px,4vw,48px)] lg:text-[clamp(42px,4vw,64px)]
               font-extrabold text-[#1a1a1a] mb-[12px] mt-[-5px]
               leading-[1.15] tracking-[0.4%]">
                                 Apply Now

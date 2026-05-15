@@ -62,11 +62,11 @@ const NotificationsWorkspace = () => {
       {/* Notifications List */}
       <div className="bg-white rounded-[3rem] border border-slate-100 shadow-xl shadow-slate-200/20 overflow-hidden">
         {isLoading ? (
-          <div className="p-20 flex justify-center">
+          <div className="p-6 md:p-undefined flex justify-center">
             <div className="w-8 h-8 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin" />
           </div>
         ) : notifications.length === 0 ? (
-          <div className="py-32 flex flex-col items-center justify-center text-center">
+          <div className="py-10 md:py-undefined flex flex-col items-center justify-center text-center">
             <BellOff className="w-16 h-16 text-slate-100 mb-6" />
             <h3 className="text-xl font-bold text-slate-900 tracking-tight">Operational Silence</h3>
             <p className="text-slate-500 mt-2 max-w-xs">Everything is running smooth. New alerts will appear here in real-time.</p>

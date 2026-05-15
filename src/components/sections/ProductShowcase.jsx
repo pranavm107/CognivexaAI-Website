@@ -205,7 +205,7 @@ const ProductShowcase = ({ id }) => {
             className="relative h-[500vh] bg-transparent mb-40" // Increased height to slow down scroll animation
             style={{ zIndex: 50, position: 'relative' }}
         >
-            <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
+            <div className="sticky top-0 min-h-[100svh] w-full flex items-center justify-center overflow-hidden">
 
                 {/* Expanding Panel */}
                 <motion.div
@@ -329,7 +329,7 @@ const ProductShowcase = ({ id }) => {
                             }}
                             className="absolute inset-0 flex items-center justify-center z-10"
                         >
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-undefined items-center w-full">
                                 <div className="space-y-8 lg:pl-10 text-left">
                                     <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 leading-tight">Product Engineering</h2>
                                     <p className="text-gray-600 text-lg leading-relaxed">
@@ -382,7 +382,7 @@ const ProductShowcase = ({ id }) => {
                             }}
                             className="absolute inset-0 flex items-center justify-center z-10"
                         >
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-undefined items-center w-full">
                                 <div className="space-y-8 lg:pl-10 text-left">
                                     <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 leading-tight">Custom Software Development</h2>
                                     <p className="text-gray-600 text-lg leading-relaxed">
@@ -431,7 +431,7 @@ const ProductShowcase = ({ id }) => {
                             }}
                             className="absolute inset-0 flex items-center justify-center z-10"
                         >
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-undefined items-center w-full">
                                 <div className="space-y-8 lg:pl-10 text-left">
                                     <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 leading-tight">Mobile App Development</h2>
                                     <p className="text-gray-600 text-lg leading-relaxed">
@@ -479,7 +479,7 @@ const ProductShowcase = ({ id }) => {
                             }}
                             className="absolute inset-0 flex items-center justify-center"
                         >
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-undefined items-center w-full">
                                 <div className="space-y-8 lg:pl-10 text-left">
                                     <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 leading-tight">Artificial Intelligence & Automation</h2>
                                     <p className="text-gray-600 text-lg leading-relaxed">

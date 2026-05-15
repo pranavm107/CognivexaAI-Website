@@ -72,7 +72,7 @@ export default function CareersCTA() {
                                 </p>
                             </div> */}
 
-                            <h2 className="mt-6 text-[30px] md:text-[44px] lg:text-[52px] font-extrabold text-white leading-[1.1]">
+                            <h2 className="mt-6 text-[clamp(20px,4vw,30px)] md:text-[clamp(29px,4vw,44px)] lg:text-[clamp(34px,4vw,52px)] font-extrabold text-white leading-[1.1]">
                                 Discover Your Next Role with Us
                             </h2>
 

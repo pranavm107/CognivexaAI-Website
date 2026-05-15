@@ -41,7 +41,7 @@ const JobDetails = () => {
             {/* Hero Banner */}
             <ScrollReveal variant="heading" className="bg-gradient-to-br from-[#b98af3] to-[#6b2bd9] py-[80px] text-center">
                 <div className="w-full px-5">
-                    <h1 className="text-[28px] md:text-[40px] font-bold text-white leading-[1.3]">
+                    <h1 className="text-[clamp(18px,4vw,28px)] md:text-[clamp(26px,4vw,40px)] font-bold text-white leading-[1.3]">
                         We Empower Ambitious Talent<br />
                         <span className="block font-normal opacity-95">To Build Intelligent Digital Solutions</span>
                     </h1>
@@ -54,12 +54,12 @@ const JobDetails = () => {
 
                     <div className="flex items-start gap-[24px]">
                         <div
-                            className="w-[108px] h-[108px] rounded-[12px] bg-[#6b2bd9] text-white font-semibold flex items-center justify-center text-[22px] border-[1px] border-white shadow-sm shrink-0">
+                            className="w-[108px] h-[108px] rounded-[12px] bg-[#6b2bd9] text-white font-semibold flex items-center justify-center text-[clamp(14px,4vw,22px)] border-[1px] border-white shadow-sm shrink-0">
                             Evolvex!!
                         </div>
 
                         <div className="mt-[60px] mb-[12px]">
-                            <h3 className="text-[24px] font-bold mb-[8px] text-[#2F343A] flex items-center">
+                            <h3 className="text-[clamp(16px,4vw,24px)] font-bold mb-[8px] text-[#2F343A] flex items-center">
                                 Evolvex AI Solutions Pvt. Ltd.
                                 <img src="/assets/svg/Verified.svg" alt="Verified" className="w-[20px] h-[20px] ml-[8px]" />
                             </h3>
@@ -112,7 +112,7 @@ const JobDetails = () => {
                 <div className="max-w-[1200px] mx-auto bg-white border border-[#EDEDED] rounded-[10px] p-[30px_24px] md:p-[40px_48px] shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
 
 
-                    <h2 className="text-[26px] font-semibold mb-[10px] text-[#111]" id="jobTitle">{jobTitle}</h2>
+                    <h2 className="text-[clamp(17px,4vw,26px)] font-semibold mb-[10px] text-[#111]" id="jobTitle">{jobTitle}</h2>
 
                     <p className="text-[14px] text-[4a4a4a] mb-[12px]">
                         <strong>Full-Time| On-Site | Coimbatore</strong>
@@ -271,7 +271,7 @@ const JobDetails = () => {
 
                     {/* Section Header */}
                     <header className="text-center mb-[56px]">
-                        <h2 className="text-[28px] lg:text-[32px] font-bold text-[#111] mb-[8px]">Apply for this Position</h2>
+                        <h2 className="text-[clamp(18px,4vw,28px)] lg:text-[clamp(21px,4vw,32px)] font-bold text-[#111] mb-[8px]">Apply for this Position</h2>
                         <p className="text-[15px] lg:text-[16px] text-[#6b7280]">
                             Submit your details and our hiring team will reach out to you shortly.
                         </p>

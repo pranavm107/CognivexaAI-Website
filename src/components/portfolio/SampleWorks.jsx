@@ -245,7 +245,7 @@ const SampleWorks = () => {
     const samples = result?.results || [];
 
     return (
-        <section id="concept-projects" className="py-32 relative bg-[#ffffff] overflow-hidden">
+        <section id="concept-projects" className="py-10 md:py-undefined relative bg-[#ffffff] overflow-hidden">
             {/* Background Effects */}
             <div 
                 className="absolute inset-0 pointer-events-none"
@@ -274,7 +274,7 @@ const SampleWorks = () => {
                         </span>
                     </div>
                     
-                    <h2 className="text-[42px] md:text-[52px] font-[800] text-[#0a0a0a] leading-[1.1] mb-6 max-w-4xl tracking-tight">
+                    <h2 className="text-[clamp(27px,4vw,42px)] md:text-[clamp(34px,4vw,52px)] font-[800] text-[#0a0a0a] leading-[1.1] mb-6 max-w-4xl tracking-tight">
                         Concepts That Demonstrate Our <span style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Engineering Standards</span>
                     </h2>
                     

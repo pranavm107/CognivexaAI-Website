@@ -27,7 +27,7 @@ const promises = [
 
 const Testimonials = () => {
   return (
-    <section className="py-24 bg-white relative overflow-hidden" id="our-promise">
+    <section className="py-10 md:py-undefined bg-white relative overflow-hidden" id="our-promise">
       {/* Decorative Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,_rgba(124,58,237,0.03)_0%,_transparent_70%)]" />
@@ -73,10 +73,10 @@ const Testimonials = () => {
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-white font-bold">
-                  PK
+                  PA
                 </div>
                 <div>
-                  <div className="text-white font-bold">Praneeth Kumar</div>
+                  <div className="text-white font-bold">Pranav Agneesh</div>
                   <div className="text-white/50 text-sm">Founder, CognivexaAI</div>
                 </div>
               </div>

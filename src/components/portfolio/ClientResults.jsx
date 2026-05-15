@@ -53,7 +53,7 @@ const results = [
 
 const ClientResults = () => {
     return (
-        <section className="py-24 bg-[#030712] relative overflow-hidden">
+        <section className="py-10 md:py-undefined bg-[#030712] relative overflow-hidden">
             {/* Background Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-purple-900/10 blur-[150px] -z-10" />
 

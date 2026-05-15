@@ -21,7 +21,7 @@ const WorkflowProgress = ({ isOpen, workflowName, state, steps, currentStepIndex
         >
            {/* Background Glow */}
            <div className={cn(
-             "absolute -top-20 -right-20 w-40 h-40 rounded-full blur-3xl opacity-20 transition-colors duration-1000",
+             "absolute -top-6 md:p-undefined -right-20 w-40 h-40 rounded-full blur-3xl opacity-20 transition-colors duration-1000",
              state === 'completed' ? "bg-emerald-500" : state === 'failed' ? "bg-rose-500" : "bg-indigo-500"
            )} />
 

@@ -1,14 +1,20 @@
 import React from 'react';
-import { Search, Bell, User } from 'lucide-react';
+import { Search, Bell, User, Menu } from 'lucide-react';
 import useAuthStore from '../store/authStore';
 
-const Header = () => {
+const Header = ({ onMenuClick }) => {
   const user = useAuthStore(state => state.user);
 
   return (
-    <header className="h-16 border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-10 px-8 flex items-center justify-between">
-      <div className="flex items-center gap-4 flex-1 max-w-md">
-        <div className="relative w-full group">
+    <header className="h-16 border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-10 px-4 md:px-8 flex items-center justify-between">
+      <div className="flex items-center gap-2 md:gap-4 flex-1 max-w-md">
+        <button 
+          onClick={onMenuClick}
+          className="p-2 -ml-2 text-slate-500 hover:bg-slate-100 rounded-lg lg:hidden transition-colors"
+        >
+          <Menu className="w-5 h-5" />
+        </button>
+        <div className="relative w-full group hidden sm:block">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-indigo-600 transition-colors" />
           <input 
             type="text" 

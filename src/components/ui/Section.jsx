@@ -21,7 +21,7 @@ export const Section = React.forwardRef(({
             id={id}
             ref={ref}
             className={cn(
-                "py-16 md:py-24 lg:py-32",
+                "py-10 md:py-undefined md:py-24 lg:py-32",
                 bgColors[background],
                 className
             )}

@@ -222,7 +222,7 @@ const Booking = () => {
               )}
 
               {step === 4 && (
-                <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="flex flex-col items-center justify-center text-center space-y-8 py-20">
+                <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="flex flex-col items-center justify-center text-center space-y-8 py-10 md:py-undefined">
                   <div className="w-24 h-24 bg-emerald-50 rounded-[2.5rem] flex items-center justify-center text-emerald-600 shadow-xl shadow-emerald-100">
                     <CheckCircle2 className="w-12 h-12" />
                   </div>

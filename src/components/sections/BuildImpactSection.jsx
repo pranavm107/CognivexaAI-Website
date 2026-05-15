@@ -42,7 +42,7 @@ const BuildImpactSection = () => {
                 {isLoading ? (
                     <div className="space-y-32">
                         {[1, 2].map(i => (
-                            <div key={i} className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 animate-pulse">
+                            <div key={i} className="flex flex-col lg:flex-row items-center gap-6 md:gap-undefined lg:gap-6 md:p-undefined animate-pulse">
                                 <div className="w-full lg:w-3/5 aspect-[16/10] bg-gray-100 rounded-3xl"></div>
                                 <div className="w-full lg:w-2/5 space-y-6">
                                     <div className="w-24 h-6 bg-gray-100 rounded-full"></div>

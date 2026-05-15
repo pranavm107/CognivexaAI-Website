@@ -80,7 +80,7 @@ const Blog = () => {
     ];
 
     return (
-        <div className="bg-white py-24">
+        <div className="bg-white py-10 md:py-undefined">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-[#6C4CF0] font-semibold tracking-wide uppercase text-sm mb-3">Our Blog</h2>

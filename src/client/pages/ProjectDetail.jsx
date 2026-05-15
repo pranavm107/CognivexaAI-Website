@@ -433,7 +433,7 @@ const ProjectDetail = () => {
                   <div className="p-8 border-b border-slate-50">
                      <h3 className="text-xl font-black text-slate-900 tracking-tight">Project Invoices</h3>
                   </div>
-                  <div className="p-20 text-center text-slate-400 font-bold">
+                  <div className="p-6 md:p-undefined text-center text-slate-400 font-bold">
                      No invoices generated for this project yet.
                   </div>
                </div>

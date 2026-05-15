@@ -124,7 +124,7 @@ const Projects = () => {
             <ProjectCard key={project._id} project={project} />
           ))
         ) : (
-          <div className="col-span-full py-32 text-center">
+          <div className="col-span-full py-10 md:py-undefined text-center">
             <div className="w-24 h-24 bg-slate-50 rounded-[2.5rem] flex items-center justify-center text-slate-200 mx-auto mb-8">
               <Box className="w-10 h-10" />
             </div>

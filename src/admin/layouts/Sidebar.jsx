@@ -18,7 +18,8 @@ import {
   Calendar,
   Palette,
   Tag,
-  Layout
+  Layout,
+  X
 } from 'lucide-react';
 import useAuthStore from '../store/authStore';
 import { cn } from '../utils/utils';
@@ -83,18 +84,29 @@ const categories = [
   }
 ];
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, onClose }) => {
   const logout = useAuthStore(state => state.logout);
 
   return (
-    <aside className="w-64 bg-white border-r border-slate-200 h-screen flex flex-col sticky top-0 overflow-y-auto">
-      <div className="p-6">
-        <h1 className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-          Cognivexa AI
-        </h1>
-        <p className="text-xs text-slate-400 font-medium tracking-wider uppercase mt-1">
-          Operations
-        </p>
+    <aside className={cn(
+      "w-64 bg-white border-r border-slate-200 min-h-[100svh] flex flex-col fixed inset-y-0 left-0 z-30 transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0 lg:flex",
+      isOpen ? "translate-x-0" : "-translate-x-full"
+    )}>
+      <div className="p-6 flex items-center justify-between">
+        <div>
+          <h1 className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            Cognivexa AI
+          </h1>
+          <p className="text-xs text-slate-400 font-medium tracking-wider uppercase mt-1">
+            Operations
+          </p>
+        </div>
+        <button 
+          onClick={onClose}
+          className="p-1 lg:hidden text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-md transition-colors"
+        >
+          <X className="w-5 h-5" />
+        </button>
       </div>
 
       <nav className="flex-1 px-4 space-y-8 overflow-y-auto pt-4">

@@ -12,7 +12,7 @@ const ConceptBuildCard = ({ project, idx, alignment }) => {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
         viewport={{ once: true, margin: "-80px" }}
-        className={`flex flex-col ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-16 lg:gap-24`}
+        className={`flex flex-col ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-6 md:gap-undefined lg:gap-6 md:p-undefined`}
     >
         <div className="w-full lg:w-3/5 group relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-purple-200/20 blur-[80px] rounded-full -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

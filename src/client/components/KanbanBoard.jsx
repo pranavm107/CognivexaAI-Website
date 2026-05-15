@@ -50,7 +50,7 @@ const KanbanBoard = ({ projectId }) => {
     e.dataTransfer.setData('taskId', taskId);
   };
 
-  if (isLoading) return <div className="p-20 text-center font-black animate-pulse">Syncing Task Engine...</div>;
+  if (isLoading) return <div className="p-6 md:p-undefined text-center font-black animate-pulse">Syncing Task Engine...</div>;
 
   return (
     <div className="space-y-8">

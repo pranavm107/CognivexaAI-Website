@@ -67,7 +67,7 @@ const CapabilitiesGrid = () => {
 
     if (isLoading) {
         return (
-            <div className="py-24 max-w-[1200px] mx-auto px-6">
+            <div className="py-10 md:py-undefined max-w-[1200px] mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {[1,2,3,4,5,6].map(i => (
                         <div key={i} className="h-64 bg-slate-50 rounded-[24px] animate-pulse border border-slate-100" />
@@ -78,7 +78,7 @@ const CapabilitiesGrid = () => {
     }
 
     return (
-        <section id="solutions" className="py-24 relative overflow-hidden" style={{
+        <section id="solutions" className="py-10 md:py-undefined relative overflow-hidden" style={{
             background: `
                 radial-gradient(ellipse at 50% -10%, rgba(168,85,247,0.08) 0%, transparent 60%),
                 radial-gradient(rgba(124,58,237,0.06) 1px, transparent 1px),
@@ -123,7 +123,7 @@ const CapabilitiesGrid = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-[40px] md:text-[56px] font-[800] text-[#0a0a0a] mb-6 leading-[1.1]"
+                        className="text-[clamp(26px,4vw,40px)] md:text-[clamp(36px,4vw,56px)] font-[800] text-[#0a0a0a] mb-6 leading-[1.1]"
                     >
                         Real Solutions for <span className="bg-gradient-to-r from-[#7c3aed] to-[#a855f7] bg-clip-text text-transparent">Real Problems</span>
                     </motion.h2>
@@ -187,7 +187,7 @@ const CapabilitiesGrid = () => {
                                     {/* Visual Preview Bar */}
                                     <div className={`h-[3px] w-12 rounded-full mb-3 bg-gradient-to-r ${project.gradientStyle}`} />
 
-                                    <h3 className="text-[20px] font-[700] text-[#0a0a0a] mb-2 group-hover:text-[#7c3aed] transition-colors duration-200">
+                                    <h3 className="text-[clamp(13px,4vw,20px)] font-[700] text-[#0a0a0a] mb-2 group-hover:text-[#7c3aed] transition-colors duration-200">
                                         {project.title}
                                     </h3>
                                     

@@ -31,7 +31,7 @@ const testimonials = [
 
 const PortfolioTestimonials = () => {
     return (
-        <section className="py-24 bg-[#030712] relative">
+        <section className="py-10 md:py-undefined bg-[#030712] relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">What Clients Say</h2>

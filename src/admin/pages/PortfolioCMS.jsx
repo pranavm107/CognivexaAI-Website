@@ -112,7 +112,7 @@ const PortfolioCardPreview = ({ project }) => {
         <IconComponent className="w-6 h-6" />
       </div>
       <div className={`h-[3px] w-12 rounded-full mb-3 bg-gradient-to-r ${project.gradientStyle}`} />
-      <h3 className="text-[20px] font-[700] text-[#0a0a0a] mb-2">{project.title || 'Project Title'}</h3>
+      <h3 className="text-[clamp(13px,4vw,20px)] font-[700] text-[#0a0a0a] mb-2">{project.title || 'Project Title'}</h3>
       <p className="text-[#6b7280] text-[15px] leading-[1.7] mb-3 line-clamp-2">{project.shortDescription || 'Description...'}</p>
       <div className="flex flex-wrap gap-2 mb-3">
         {(project.technologies?.length > 0 ? project.technologies : ['React', 'AI']).map(tech => (
@@ -297,7 +297,7 @@ const PortfolioCMS = () => {
           {[1,2,3].map(i => <div key={i} className="h-64 bg-slate-100 rounded-[2.5rem] animate-pulse" />)}
         </div>
       ) : filteredItems.length === 0 ? (
-        <div className="py-32 flex flex-col items-center justify-center bg-white rounded-[3rem] border border-dashed border-slate-200">
+        <div className="py-10 md:py-undefined flex flex-col items-center justify-center bg-white rounded-[3rem] border border-dashed border-slate-200">
           <Sparkles className="w-16 h-16 text-slate-200 mb-6" />
           <h3 className="text-xl font-bold text-slate-900">Nothing Found</h3>
         </div>

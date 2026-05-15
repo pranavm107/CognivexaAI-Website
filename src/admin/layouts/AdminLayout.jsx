@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Header from './Header';
@@ -9,6 +9,7 @@ import { useSocket } from '../hooks/useSocket';
 import GlobalAlertBar from '../components/GlobalAlertBar';
 
 const AdminLayout = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const isAuthenticated = useAuthStore(state => state.isAuthenticated);
   const _hasHydrated = useAuthStore(state => state._hasHydrated);
   
@@ -31,10 +32,20 @@ const AdminLayout = () => {
   return (
     <div className="flex bg-slate-50 min-h-screen">
       <CommandMenu />
-      <Sidebar />
-      <div className="flex-1 flex flex-col min-w-0">
-        <Header />
-        <main className="flex-1 p-8">
+      
+      {/* Mobile Sidebar Overlay */}
+      {isSidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-slate-900/50 z-20 lg:hidden backdrop-blur-sm"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+
+      <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+      
+      <div className="flex-1 flex flex-col min-w-0 w-full">
+        <Header onMenuClick={() => setIsSidebarOpen(true)} />
+        <main className="flex-1 p-4 md:p-8 overflow-x-hidden">
           <Outlet />
         </main>
         <GlobalAlertBar />

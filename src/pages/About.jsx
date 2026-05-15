@@ -19,18 +19,18 @@ const About = () => {
     return (
         <>
             {/* About Hero */}
-            <section className="py-20 lg:py-[120px] pb-16 lg:pb-[100px] bg-white mt-8 md:mt-12">
+            <section className="py-10 md:py-undefined lg:py-[120px] pb-16 lg:pb-[100px] bg-white mt-8 md:mt-12">
                 <div
                     className="w-full px-4 sm:px-6 md:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-[60px] lg:gap-[80px] items-center text-center lg:text-left">
 
                     {/* Left Content */}
                     <ScrollReveal variant="featureLeft" className="mx-auto">
-                        <h1 className="text-[56px] font-bold leading-[1.15] tracking-[-0.02em] text-[#1A1A1A] mb-[24px]">
+                        <h1 className="text-[clamp(36px,4vw,56px)] font-bold leading-[1.15] tracking-[-0.02em] text-[#1A1A1A] mb-[24px]">
                             Engineering Intelligent Systems
                             <br></br>for Modern Businesses
                         </h1>
 
-                        <p className="text-[20px] leading-[1.7] text-[#4A4A4A] mb-[36px]">
+                        <p className="text-[clamp(13px,4vw,20px)] leading-[1.7] text-[#4A4A4A] mb-[36px]">
                             We design and build scalable AI-powered solutions that simplify complexity,<br></br>
                             automate operations, and drive measurable growth. Our team focuses on<br></br>
                             combining engineering precision with intelligent automation to create systems<br></br>
@@ -165,7 +165,7 @@ text-[#7C5CFF] mb-8 uppercase">
             >
                 <div className="text-center mb-[60px] lg:mb-[80px]">
                     <ScrollReveal variant="heading">
-                        <h2 className="text-[32px] lg:text-[44px] font-extrabold text-[#111]">
+                        <h2 className="text-[clamp(21px,4vw,32px)] lg:text-[clamp(29px,4vw,44px)] font-extrabold text-[#111]">
                             Our Values
                         </h2>
                     </ScrollReveal>
@@ -382,7 +382,7 @@ text-[#7C5CFF] mb-8 uppercase">
                                 OUR VALUES
                             </p>
 
-                            <h2 className="text-[34px] lg:text-[50px] font-extrabold text-[#111] leading-[1.05] mb-[18px]">
+                            <h2 className="text-[clamp(22px,4vw,34px)] lg:text-[clamp(33px,4vw,50px)] font-extrabold text-[#111] leading-[1.05] mb-[18px]">
                                 Built for Precision and Scale
                             </h2>
 
@@ -399,9 +399,9 @@ text-[#7C5CFF] mb-8 uppercase">
             <WhyBusinessesChoose />
 
             {/* Final CTA Section */}
-            <section className="py-24 px-6 bg-white">
-                <div className="max-w-6xl mx-auto text-center py-20 px-8 rounded-[2rem] bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-2xl relative overflow-hidden">
-                    <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+            <section className="py-10 md:py-undefined px-6 bg-white">
+                <div className="max-w-6xl mx-auto text-center py-10 md:py-undefined px-8 rounded-[2rem] bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-2xl relative overflow-hidden">
+                    <div className="absolute -top-6 md:p-undefined -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
                     <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-indigo-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
                     
                     <div className="relative z-10">

@@ -113,7 +113,7 @@ const CinematicServicesSection = () => {
                             <div className="inline-flex px-[10px] py-[6px] mb-2 bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-[10px] font-bold text-white uppercase tracking-widest">
                                 {service.tag}
                             </div>
-                            <h3 className="text-[18px] lg:text-[20px] font-bold text-white tracking-tight leading-tight">
+                            <h3 className="text-[18px] lg:text-[clamp(13px,4vw,20px)] font-bold text-white tracking-tight leading-tight">
                                 {service.title}
                             </h3>
                         </div>
@@ -148,7 +148,7 @@ const CinematicServicesSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-6xl lg:text-[80px] font-bold text-white leading-[1.05] mb-10 tracking-tighter"
+                    className="text-6xl lg:text-[clamp(52px,4vw,80px)] font-bold text-white leading-[1.05] mb-10 tracking-tighter"
                 >
                     Every digital capability <br />
                     your <span className="text-[#a855f7]">business</span> <span className="text-[#f97316]">needs.</span>

@@ -53,7 +53,7 @@ const PortfolioHero = () => {
                     </div>
 
                     <h1 
-                        className="text-5xl md:text-[72px] font-black text-[#111827] leading-[1.1] mb-8 tracking-tight"
+                        className="text-5xl md:text-[clamp(47px,4vw,72px)] font-black text-[#111827] leading-[1.1] mb-8 tracking-tight"
                         style={{ textShadow: '0 2px 20px rgba(0,0,0,0.05)' }}
                     >
                         Intelligent Solutions,<br />

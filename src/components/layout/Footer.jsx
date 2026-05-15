@@ -94,7 +94,7 @@ const Footer = () => {
             </div>
 
             {/* SECTION 2 — Main Footer Grid */}
-            <div className="max-w-[1200px] mx-auto px-6 py-20 relative z-10">
+            <div className="max-w-[1200px] mx-auto px-6 py-10 md:py-undefined relative z-10">
                 <motion.div 
                     variants={containerVariants}
                     initial="hidden"
@@ -106,7 +106,7 @@ const Footer = () => {
                     <motion.div variants={itemVariants} className="md:col-span-3 lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
                         <div className="mb-6">
                             <Link to="/">
-                                <span className="text-[22px] font-black tracking-tight">
+                                <span className="text-[clamp(14px,4vw,22px)] font-black tracking-tight">
                                     <span className="text-white">Cognivexa</span>
                                     <span className="text-purple-400">AI</span>
                                 </span>

@@ -166,9 +166,9 @@ const Navbar = ({ onOpenOverlay }) => {
                             to="/services"
                             className={`font-medium text-sm ${location.pathname.startsWith('/services') ? 'nav-link-active text-[#7c3aed]' : 'text-gray-700'} ${active === 'Services' ? '!text-[#7c3aed] drop-shadow-[0_0_8px_rgba(124,58,237,0.3)]' : ''}`}
                             onMouseEnter={(e) => moveIndicator(e.currentTarget)}
-                            menuClassName="bg-[#ffffff] rounded-[20px] overflow-hidden border border-[#e5e7eb] shadow-[0_20px_50px_rgba(0,0,0,0.08),0_10px_30px_rgba(124,58,237,0.08)] min-w-[580px]"
+                            menuClassName="bg-[#ffffff] rounded-[20px] overflow-hidden border border-[#e5e7eb] shadow-[0_20px_50px_rgba(0,0,0,0.08),0_10px_30px_rgba(124,58,237,0.08)] w-full max-w-[580px] md:min-w-[580px]"
                         >
-                            <div className="w-[580px] p-2 pointer-events-auto">
+                            <div className="w-full md:w-[580px] p-2 pointer-events-auto">
                                 {/* Header row */}
                                 <div className="px-3 py-2 mb-3">
                                     <div className="flex items-center justify-between">
@@ -188,7 +188,7 @@ const Navbar = ({ onOpenOverlay }) => {
                                 </div>
 
                                 {/* 2x2 Service Cards */}
-                                <div className="grid grid-cols-2 gap-1.5 mb-3">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5 mb-3">
                                     {[
                                         {
                                             title: "AI & Automation",
@@ -310,11 +310,11 @@ const Navbar = ({ onOpenOverlay }) => {
                             to="/pricing"
                             className={`font-medium text-sm ${location.pathname.startsWith('/pricing') ? 'nav-link-active text-[#7c3aed]' : 'text-gray-700'} ${active === 'Pricing' ? '!text-[#7c3aed] drop-shadow-[0_0_8px_rgba(124,58,237,0.3)]' : ''}`}
                             onMouseEnter={(e) => moveIndicator(e.currentTarget)}
-                            menuClassName="bg-[rgba(255,255,255,0.85)] backdrop-blur-[16px] rounded-[20px] overflow-hidden border border-black/[0.06] shadow-[0_25px_60px_rgba(0,0,0,0.08),_0_25px_60px_rgba(124,58,237,0.10)] min-w-[760px]"
+                            menuClassName="bg-[rgba(255,255,255,0.85)] backdrop-blur-[16px] rounded-[20px] overflow-hidden border border-black/[0.06] shadow-[0_25px_60px_rgba(0,0,0,0.08),_0_25px_60px_rgba(124,58,237,0.10)] w-full max-w-[760px] md:min-w-[760px]"
                         >
                             <div className="w-full flex flex-col pointer-events-auto">
                                 {/* Columns */}
-                                <div className="grid grid-cols-3 gap-6 p-6 sm:p-8">
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 sm:p-8">
                                     {/* Web Column */}
                                     <div className="flex flex-col">
                                         <p className="text-[12px] tracking-[0.1em] text-[#94a3b8] font-bold uppercase mb-3 pl-1">Web & Apps</p>

@@ -45,7 +45,7 @@ const TeamsSection = ({ variant = 'full' }) => {
 
   const teamData = teamsRes?.results || [];
 
-  if (isLoading) return <div className="py-20 text-center animate-pulse font-bold text-gray-400">Loading Team Excellence...</div>;
+  if (isLoading) return <div className="py-10 md:py-undefined text-center animate-pulse font-bold text-gray-400">Loading Team Excellence...</div>;
   if (!teamData.length) return null;
 
   const fullVariant = (

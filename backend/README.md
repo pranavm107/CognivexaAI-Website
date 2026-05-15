@@ -1,59 +1,82 @@
-# Evolvex AI Backend
+# CognivexaAI Backend Infrastructure
 
-Production-ready Node.js backend for Evolvex AI SaaS website.
+Enterprise-grade Node.js/Express backend for the CognivexaAI platform. This system handles complex orchestration between AI services, communication pipelines, and administrative workflows.
 
-## Tech Stack
-- **Framework:** Express.js
-- **Database:** MongoDB (Mongoose)
-- **Validation:** Zod
-- **Email:** Nodemailer
-- **Security:** Helmet, CORS, Express-Rate-Limit
+## 🏛 Architecture
 
-## Getting Started
+The backend follows a service-oriented architecture designed for scalability and maintainability.
 
-1. **Install Dependencies:**
-   ```bash
-   cd backend
-   npm install
-   ```
+- **Controllers**: Handle HTTP request parsing and response formatting.
+- **Services**: Encapsulate business logic, database interactions, and third-party integrations (OpenAI, Google, Resend).
+- **Models**: Mongoose schemas with strictly defined data structures and validation.
+- **Middleware**: Security hardening, JWT authentication, and global error handling.
+- **Workers**: Asynchronous job processing using BullMQ and Redis (Email queues, cleanup tasks).
 
-2. **Configure Environment Variables:**
-   Update the `.env` file with your credentials:
-   - `MONGO_URI`: Your MongoDB connection string
-   - `EMAIL_USER`: Your Gmail address
-   - `EMAIL_PASS`: Your Gmail App Password
-   - `ADMIN_EMAIL`: Email where you want to receive inquiries
+## 🛠 Tech Stack
 
-3. **Run the Server:**
-   - Development mode (with nodemon):
-     ```bash
-     npm run dev
-     ```
-   - Production mode:
-     ```bash
-     npm start
-     ```
+- **Runtime**: Node.js (v18+)
+- **Framework**: Express.js (ES Modules)
+- **Database**: MongoDB (Mongoose ODM)
+- **Cache/Queue**: Redis (ioredis, BullMQ)
+- **Security**: Helmet, CORS, XSS-Clean, MongoDB-Sanitize
+- **Real-time**: Socket.io
+- **Integrations**: OpenAI, Resend, Twilio, Stripe, Razorpay, Google APIs
 
-## API Endpoints
+## 🚀 Getting Started
 
-### Contact/Inquiry
-- **POST** `/api/contact`
-  - **Payload:**
-    ```json
-    {
-      "name": "John Doe",
-      "email": "john@example.com",
-      "phone": "1234567890",
-      "message": "I'm interested in your services."
-    }
-    ```
-  - **Success Response (201):**
-    ```json
-    { "success": true, "message": "Inquiry submitted successfully" }
-    ```
+### Prerequisites
+- Node.js & npm
+- MongoDB Instance
+- Redis Instance
 
-## Security Features
-- **Rate Limiting:** Prevents spam by limiting IPs to 5 inquiries per 15 minutes.
-- **Helmet:** Sets various HTTP headers for security.
-- **CORS:** Configured to only allow requests from your frontend URL.
-- **Input Validation:** Strict validation using Zod to ensure data integrity.
+### Installation
+```bash
+npm install
+```
+
+### Environment Setup
+Copy `.env.example` to `.env` and fill in the required credentials. Note that many services (Calendar, WhatsApp, AI) require valid API keys to function in production.
+
+### Development
+```bash
+npm run dev
+```
+
+### Production
+```bash
+npm start
+```
+
+## 📡 Core API Modules (v1)
+
+### /admin
+Command center operations, workforce management, and platform lifecycle controls.
+
+### /inquiries
+Lead capture system with status transitions, assignment logic, and **AI scoring** via `/inquiries/:id/ai-score`.
+
+### /bookings
+Strategy call orchestration. Integrates with **Google Meet** and **Calendar** for automated scheduling.
+
+### /cms
+Dynamic content management for the public frontend (Services, Portfolio, Pricing, Teams).
+
+### /client
+Client portal infrastructure for project tracking and financial operations.
+
+## 🐳 Docker Support
+
+The backend is fully containerized. Use the provided Dockerfile and docker-compose for local or production deployment.
+
+```bash
+# Build and start services
+docker-compose up --build -d
+```
+
+## 📜 Logging & Monitoring
+- **Pino**: High-performance JSON logging for production.
+- **Winston**: Daily rotate logs for audit trails.
+- **Sentry**: Real-time error tracking and performance monitoring.
+
+---
+*Enterprise AI Backend by CognivexaAI.*

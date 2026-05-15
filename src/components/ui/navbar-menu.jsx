@@ -95,7 +95,7 @@ export const Menu = ({ setActive, children, onMouseLeave }) => {
     <nav
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
-      className="relative flex items-center gap-8"
+      className="relative flex flex-col md:flex-row items-center gap-4 md:gap-8"
     >
       {children}
     </nav>

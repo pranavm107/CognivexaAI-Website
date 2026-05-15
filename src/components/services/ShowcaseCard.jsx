@@ -33,7 +33,7 @@ const ShowcaseCard = ({ project, index }) => {
         </div>
 
         <div className="absolute bottom-8 left-8 right-8">
-          <h3 className="text-white text-[24px] font-bold mb-2">{project.title}</h3>
+          <h3 className="text-white text-[clamp(16px,4vw,24px)] font-bold mb-2">{project.title}</h3>
           <p className="text-gray-300 text-[14px] mb-4 max-w-md">{project.shortDescription}</p>
           <div className="flex flex-wrap gap-2 mb-6">
             {project.technologies?.map(tag => (

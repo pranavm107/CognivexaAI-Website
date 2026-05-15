@@ -38,8 +38,8 @@ const WhyWorkWithUs = () => {
         <section className="py-[80px]" id="why-work" aria-labelledby="why-work-title">
             <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
                 <ScrollReveal variant="heading" className="text-center mb-[32px]">
-                    <h2 id="why-work-title" className="text-[32px] font-extrabold text-[#0b1220] mb-2">Why Work With Us</h2>
-                    <p className="text-gray-600 max-w-[820px] mx-auto mt-[14px] text-[19.2px] md:text-[20px]">
+                    <h2 id="why-work-title" className="text-[clamp(21px,4vw,32px)] font-extrabold text-[#0b1220] mb-2">Why Work With Us</h2>
+                    <p className="text-gray-600 max-w-[820px] mx-auto mt-[14px] text-[19.2px] md:text-[clamp(13px,4vw,20px)]">
                         Join a workplace that values innovation,
                         collaboration, and continuous growth.<br />
                         We provide a supportive environment where ideas are welcomed, talents are nurtured,<br />

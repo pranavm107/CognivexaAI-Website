@@ -38,7 +38,7 @@ export default function ExpertiseCard({
                 </div>
 
                 {/* Content */}
-                <h3 className="mt-6 text-[20px] lg:text-[22px] font-extrabold text-[#141033] leading-[1.15]">
+                <h3 className="mt-6 text-[clamp(13px,4vw,20px)] lg:text-[clamp(14px,4vw,22px)] font-extrabold text-[#141033] leading-[1.15]">
                     {title}
                 </h3>
 

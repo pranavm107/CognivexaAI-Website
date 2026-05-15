@@ -8,7 +8,7 @@ const founders = [
     role: "Founder & CEO",
     bio: "AI engineer and full-stack architect with a passion for building intelligent systems that solve real business problems. Specializes in LLM integration, automation, and scalable backend architecture.",
     highlights: ["AI & LLM Systems", "Full-Stack Development", "10+ Projects Built", "Automation Expert"],
-    avatar: "PK",
+    avatar: "PA",
     gradient: "from-purple-600 to-indigo-600",
     socials: {
       linkedin: "https://linkedin.com/in/praneeth-kumar",
@@ -33,7 +33,7 @@ const founders = [
 
 export default function FoundersSection({ variant = "full" }) {
   return (
-    <section className={`py-24 px-4 bg-white relative overflow-hidden ${variant === 'mini' ? 'bg-gray-50/30' : ''}`}>
+    <section className={`py-10 md:py-undefined px-4 bg-white relative overflow-hidden ${variant === 'mini' ? 'bg-gray-50/30' : ''}`}>
 
       {/* Decorative background */}
       <div className="absolute inset-0 pointer-events-none">

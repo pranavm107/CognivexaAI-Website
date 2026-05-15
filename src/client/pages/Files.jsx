@@ -143,7 +143,7 @@ const Files = () => {
             </motion.div>
           ))
         ) : (
-          <div className="col-span-full py-32 text-center bg-slate-50/50 rounded-[3rem] border border-dashed border-slate-200">
+          <div className="col-span-full py-10 md:py-undefined text-center bg-slate-50/50 rounded-[3rem] border border-dashed border-slate-200">
             <div className="w-24 h-24 bg-white rounded-[2.5rem] flex items-center justify-center text-slate-200 mx-auto mb-8 shadow-sm">
               <FileText className="w-10 h-10" />
             </div>
