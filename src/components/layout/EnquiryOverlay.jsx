@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/v1', '') : "http://localhost:7000/api";
+const API_BASE_URL = import.meta.env.VITE_API_URL 
+    ? import.meta.env.VITE_API_URL.replace('/v1', '') 
+    : "http://localhost:7000/api";
 
 const EnquiryOverlay = ({ isOpen, onClose }) => {
     const [formStatus, setFormStatus] = useState('idle'); // idle, submitting, success, error

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { io } from 'socket.io-client';
 import { useQueryClient } from '@tanstack/react-query';
 
-const SOCKET_URL = 'http://localhost:7000';
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:7000';
 
 export const useSocket = () => {
   const queryClient = useQueryClient();
