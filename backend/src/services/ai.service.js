@@ -17,6 +17,9 @@ export const analyzeLead = async (inquiry) => {
       Message: ${inquiry.message}
       Budget: ${inquiry.budget}
       Timeline: ${inquiry.timeline}
+      Source Portfolio Build: ${inquiry.sourcePortfolioBuild || 'None'}
+      Inquiry Source: ${inquiry.inquirySource || 'None'}
+      Selected Package: ${inquiry.pricingPlan || 'None'}
 
       Provide:
       1. Quality score (0-100)

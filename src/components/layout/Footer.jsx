@@ -85,7 +85,7 @@ const Footer = () => {
                         Ready to build something extraordinary?
                     </h2>
                     <Link
-                        to="/booking"
+                        to="/contact"
                         className="px-8 py-3.5 bg-gradient-to-r from-[#7c3aed] to-[#a855f7] rounded-full font-semibold flex items-center gap-2 transition-shadow"
                     >
                         Book a Free Call <ArrowRight className="w-4 h-4" />

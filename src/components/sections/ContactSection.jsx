@@ -1,12 +1,30 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Mail, MapPin, Phone, Linkedin, Twitter, Github, CheckCircle2 } from 'lucide-react';
+import { getPortfolioTemplate } from '../../constants/portfolioInquiryTemplates';
+import { getPricingTemplate } from '../../constants/pricingInquiryTemplates';
 import '../../styles/ContactPremium.css';
 
 const ContactSection = () => {
+    const location = useLocation();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const leftColRef = useRef(null);
     const rightColRef = useRef(null);
+
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        phone: '',
+        serviceOfInterest: '',
+        budget: '',
+        timeline: '',
+        message: '',
+        sourcePortfolioBuild: '',
+        inquirySource: '',
+        pricingPlan: '',
+        pricingKey: ''
+    });
 
     // Intersection Observer for animations
     useEffect(() => {
@@ -35,20 +53,58 @@ const ContactSection = () => {
         };
     }, []);
 
+    // Hydrate form values dynamically from navigation state (portfolio or pricing CTA click)
+    useEffect(() => {
+        // 1. Pricing hydration (Priority 1)
+        if (location.state?.inquirySource === 'pricing' && location.state?.pricingKey && !formData.pricingKey) {
+            const template = getPricingTemplate(location.state.pricingKey);
+            setFormData(prev => ({
+                ...prev,
+                serviceOfInterest: template.service,
+                budget: template.budget,
+                timeline: template.timeline,
+                message: template.message,
+                inquirySource: 'pricing',
+                pricingPlan: location.state.pricingPlan,
+                pricingKey: location.state.pricingKey
+            }));
+        }
+        // 2. Portfolio hydration (Priority 2)
+        else if (location.state?.sourcePortfolioBuild && !formData.sourcePortfolioBuild) {
+            const template = getPortfolioTemplate(
+                location.state.portfolioSlug,
+                location.state.sourcePortfolioBuild,
+                location.state.portfolioBadge
+            );
+            setFormData(prev => ({
+                ...prev,
+                serviceOfInterest: template.service,
+                budget: template.budget,
+                timeline: template.timeline,
+                message: template.message,
+                sourcePortfolioBuild: location.state.sourcePortfolioBuild,
+                inquirySource: 'portfolio'
+            }));
+        }
+    }, [location.state, formData.pricingKey, formData.sourcePortfolioBuild]);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        
-        const form = e.target;
-        const formData = {
-            fullName: form.querySelector('input[placeholder="Your name"]').value,
-            email: form.querySelector('input[placeholder="Your email address"]').value,
-            phone: form.querySelector('input[placeholder="Optional – if you prefer a call"]').value,
-            serviceOfInterest: form.querySelector('select').value,
-            message: form.querySelector('textarea').value,
-            subject: `Inquiry for ${form.querySelector('select').value}`,
-            budget: form.querySelector('select[name="budget"]')?.value || 'Not Specified',
-            timeline: form.querySelector('select[name="timeline"]')?.value || 'Not Specified'
+
+        const payload = {
+            fullName: formData.fullName,
+            email: formData.email,
+            phone: formData.phone,
+            serviceOfInterest: formData.serviceOfInterest,
+            message: formData.message,
+            subject: `Inquiry for ${formData.serviceOfInterest}`,
+            budget: formData.budget || 'Not Specified',
+            timeline: formData.timeline || 'Not Specified',
+            sourcePortfolioBuild: formData.sourcePortfolioBuild || undefined,
+            inquirySource: formData.inquirySource || undefined,
+            pricingPlan: formData.pricingPlan || undefined,
+            pricingKey: formData.pricingKey || undefined
         };
 
         try {
@@ -56,12 +112,24 @@ const ContactSection = () => {
             const response = await fetch(`${baseUrl}/public/inquiries`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(payload)
             });
 
             if (response.ok) {
                 setIsSuccess(true);
-                form.reset();
+                setFormData({
+                    fullName: '',
+                    email: '',
+                    phone: '',
+                    serviceOfInterest: '',
+                    budget: '',
+                    timeline: '',
+                    message: '',
+                    sourcePortfolioBuild: '',
+                    inquirySource: '',
+                    pricingPlan: '',
+                    pricingKey: ''
+                });
                 setTimeout(() => setIsSuccess(false), 8000);
             } else {
                 alert('Failed to send message. Please try again.');
@@ -135,7 +203,6 @@ const ContactSection = () => {
                             </div>
                         </div>
 
-
                     </div>
 
                     {/* RIGHT COLUMN - Form */}
@@ -165,6 +232,8 @@ const ContactSection = () => {
                                                 required 
                                                 placeholder="Your name" 
                                                 className="form-field-premium" 
+                                                value={formData.fullName}
+                                                onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                                             />
                                         </div>
                                         <div>
@@ -174,6 +243,8 @@ const ContactSection = () => {
                                                 required 
                                                 placeholder="Your email address" 
                                                 className="form-field-premium" 
+                                                value={formData.email}
+                                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                             />
                                         </div>
                                     </div>
@@ -185,12 +256,20 @@ const ContactSection = () => {
                                                 type="tel" 
                                                 placeholder="Optional – if you prefer a call" 
                                                 className="form-field-premium" 
+                                                value={formData.phone}
+                                                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                                             />
                                         </div>
                                         <div>
                                             <label className="form-label-premium">Service Interested In <span className="required-star">*</span></label>
                                             <div className="select-wrapper">
-                                                <select name="service" required className="form-field-premium" defaultValue="">
+                                                <select 
+                                                    name="service" 
+                                                    required 
+                                                    className="form-field-premium" 
+                                                    value={formData.serviceOfInterest}
+                                                    onChange={(e) => setFormData({ ...formData, serviceOfInterest: e.target.value })}
+                                                >
                                                     <option value="" disabled>Select a service</option>
                                                     <option value="AI & Automation">AI & Automation</option>
                                                     <option value="Custom Software">Custom Software</option>
@@ -210,7 +289,13 @@ const ContactSection = () => {
                                         <div>
                                             <label className="form-label-premium">Project Budget <span className="required-star">*</span></label>
                                             <div className="select-wrapper">
-                                                <select name="budget" required className="form-field-premium" defaultValue="">
+                                                <select 
+                                                    name="budget" 
+                                                    required 
+                                                    className="form-field-premium" 
+                                                    value={formData.budget}
+                                                    onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                                                >
                                                     <option value="" disabled>Select budget range</option>
                                                     <option value="< $5k">&lt; $5k</option>
                                                     <option value="$5k - $20k">$5k - $20k</option>
@@ -222,7 +307,13 @@ const ContactSection = () => {
                                         <div>
                                             <label className="form-label-premium">Timeline <span className="required-star">*</span></label>
                                             <div className="select-wrapper">
-                                                <select name="timeline" required className="form-field-premium" defaultValue="">
+                                                <select 
+                                                    name="timeline" 
+                                                    required 
+                                                    className="form-field-premium" 
+                                                    value={formData.timeline}
+                                                    onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
+                                                >
                                                     <option value="" disabled>Select timeline</option>
                                                     <option value="Immediate">Immediate</option>
                                                     <option value="1-3 Months">1-3 Months</option>
@@ -239,6 +330,8 @@ const ContactSection = () => {
                                             required 
                                             placeholder="Briefly describe your project, idea, or problem..." 
                                             className="form-field-premium h-[140px] resize-y"
+                                            value={formData.message}
+                                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                         ></textarea>
                                     </div>
 
@@ -256,7 +349,7 @@ const ContactSection = () => {
                                                 Sending...
                                             </span>
                                         ) : (
-                                            "Submit Project Inquiry ✦"
+                                            "Submit Project Inquiry"
                                         )}
                                     </button>
 

@@ -97,7 +97,13 @@ const ConceptBuildDetail = () => {
                             
                             <div className="flex flex-wrap gap-4">
                                 <button 
-                                    onClick={() => navigate('/contact')}
+                                    onClick={() => navigate('/contact', {
+                                        state: {
+                                            sourcePortfolioBuild: build.title,
+                                            portfolioSlug: slug,
+                                            portfolioBadge: build.badge
+                                        }
+                                    })}
                                     className="px-10 py-4 bg-gray-900 text-white font-bold rounded-xl hover:bg-gray-800 transition-all flex items-center gap-2"
                                 >
                                     Inquire for Similar Solution
@@ -173,7 +179,13 @@ const ConceptBuildDetail = () => {
                         This concept represents our engineering quality. We can architect and deploy a custom version of this solution tailored to your data and operations.
                     </p>
                     <button 
-                        onClick={() => navigate('/contact')}
+                        onClick={() => navigate('/contact', {
+                            state: {
+                                sourcePortfolioBuild: build.title,
+                                portfolioSlug: slug,
+                                portfolioBadge: build.badge
+                            }
+                        })}
                         className="px-12 py-5 bg-purple-600 text-white font-black rounded-2xl shadow-xl shadow-purple-200 hover:scale-[1.02] active:scale-[0.98] transition-all"
                     >
                         Request Case Study & Quote

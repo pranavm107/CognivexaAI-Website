@@ -14,6 +14,10 @@ const inquirySchema = new mongoose.Schema(
     serviceOfInterest: { type: String, index: true },
     budget: { type: String },
     timeline: { type: String },
+    sourcePortfolioBuild: { type: String },
+    inquirySource: { type: String },
+    pricingPlan: { type: String },
+    pricingKey: { type: String },
     source: { type: String, default: 'Website Form' }, // e.g., 'Website Form', 'Direct Email', 'Referral'
     
     // Status & Workflow

@@ -98,7 +98,21 @@ export const runAIAnalysis = catchAsync(async (req, res) => {
 });
 
 export const createPublicInquiry = catchAsync(async (req, res) => {
-  const { fullName, name, email, phone, company, serviceOfInterest, service, subject, message } = req.body;
+  const { 
+    fullName, 
+    name, 
+    email, 
+    phone, 
+    company, 
+    serviceOfInterest, 
+    service, 
+    subject, 
+    message, 
+    sourcePortfolioBuild,
+    inquirySource,
+    pricingPlan,
+    pricingKey
+  } = req.body;
   
   // Create inquiry
   const inquiryData = {
@@ -109,6 +123,10 @@ export const createPublicInquiry = catchAsync(async (req, res) => {
     serviceOfInterest: serviceOfInterest || service,
     subject: subject || `Inquiry from ${fullName || name}`,
     message,
+    sourcePortfolioBuild,
+    inquirySource,
+    pricingPlan,
+    pricingKey,
     source: 'Website Form'
   };
 

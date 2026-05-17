@@ -210,6 +210,61 @@ const LeadDrawer = ({ inquiry, isOpen, onClose, onUpdateStatus, onAddNote, onRun
           </div>
         </div>
 
+        {/* Project Parameters */}
+        {(inquiry.budget || inquiry.timeline) && (
+          <div className="space-y-4">
+            <h4 className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Project Requirements</h4>
+            <div className="grid grid-cols-2 gap-3">
+              {inquiry.budget && (
+                <div className="p-4 bg-white border border-slate-100 rounded-2xl shadow-sm">
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Target Budget</p>
+                  <p className="text-sm font-bold text-slate-700">{inquiry.budget}</p>
+                </div>
+              )}
+              {inquiry.timeline && (
+                <div className="p-4 bg-white border border-slate-100 rounded-2xl shadow-sm">
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Timeline</p>
+                  <p className="text-sm font-bold text-slate-700">{inquiry.timeline}</p>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Portfolio Build Source (if exists) */}
+        {inquiry.sourcePortfolioBuild && (
+          <div className="space-y-4">
+            <h4 className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Lead Source Details</h4>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="p-4 bg-indigo-50 border border-indigo-100 rounded-2xl shadow-sm">
+                <p className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest mb-1">Lead Source</p>
+                <p className="text-sm font-bold text-indigo-700">Portfolio Build</p>
+              </div>
+              <div className="p-4 bg-purple-50 border border-purple-100 rounded-2xl shadow-sm">
+                <p className="text-[10px] font-bold text-purple-400 uppercase tracking-widest mb-1">Selected Build</p>
+                <p className="text-sm font-bold text-purple-700">{inquiry.sourcePortfolioBuild}</p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Pricing Plan Source (if exists) */}
+        {inquiry.inquirySource === 'pricing' && (
+          <div className="space-y-4">
+            <h4 className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Lead Source Details</h4>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="p-4 bg-indigo-50 border border-indigo-100 rounded-2xl shadow-sm">
+                <p className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest mb-1">Lead Source</p>
+                <p className="text-sm font-bold text-indigo-700">Pricing Card / Package</p>
+              </div>
+              <div className="p-4 bg-purple-50 border border-purple-100 rounded-2xl shadow-sm">
+                <p className="text-[10px] font-bold text-purple-400 uppercase tracking-widest mb-1">Selected Package</p>
+                <p className="text-sm font-bold text-purple-700">{inquiry.pricingPlan || 'Custom Consultation'}</p>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Inquiry Content */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">

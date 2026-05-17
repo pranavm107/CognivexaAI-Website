@@ -65,7 +65,7 @@ const FinalCTA = () => {
                     className="flex flex-col sm:flex-row items-center justify-center gap-6"
                 >
                     {/* Primary Button */}
-                    <motion.a href="#contact" 
+                    <motion.a href="/contact" 
                         whileHover={{ scale: 1.04, boxShadow: "0 8px 32px rgba(124,58,237,0.35)" }}
                         whileTap={{ scale: 0.97 }}
                         className="group relative inline-flex h-16 items-center justify-center px-10 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-500 text-white font-bold text-xl transition-all duration-300 overflow-hidden"

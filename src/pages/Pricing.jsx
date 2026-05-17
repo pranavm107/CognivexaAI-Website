@@ -1,8 +1,23 @@
 
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Check, ArrowRight } from 'lucide-react';
+
+const getPricingKey = (title) => {
+  const t = (title || "").toLowerCase();
+  if (t.includes("starter") && t.includes("web")) return "starterWebsite";
+  if (t.includes("business") && t.includes("web")) return "businessWebsite";
+  if (t.includes("app") || t.includes("saas")) return "webAppSaas";
+  if (t.includes("ai starter") || (t.includes("ai") && t.includes("starter"))) return "aiStarter";
+  if (t.includes("ai growth") || (t.includes("ai") && t.includes("growth"))) return "aiGrowth";
+  if (t.includes("ai enterprise") || (t.includes("ai") && t.includes("enterprise"))) return "aiEnterprise";
+  if (t.includes("iot starter") || (t.includes("iot") && t.includes("starter"))) return "iotStarter";
+  if (t.includes("iot growth") || (t.includes("iot") && t.includes("growth"))) return "iotGrowth";
+  if (t.includes("iot advanced") || (t.includes("iot") && t.includes("advanced"))) return "iotAdvanced";
+  if (t.includes("smart") || t.includes("ecosystem")) return "smartSystemPackage";
+  return "";
+};
 import FAQSection from '../components/sections/FAQSection';
 import { GridPattern } from '@/components/ui/grid-pattern';
 import { cn } from '@/lib/utils';
@@ -37,6 +52,7 @@ const pricingFaqs = [
 ];
 
 export default function Pricing() {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState(0);
   const tabsRef = useRef(null);
 
@@ -207,8 +223,17 @@ export default function Pricing() {
                             <div className="text-sm text-[#64748b] mb-6 flex items-center gap-2 font-medium">
                               <span className="w-1.5 h-1.5 rounded-full bg-[#cbd5e1]" /> Timeline: {card.timeline}
                             </div>
-                            <Link 
-                              to={card.ctaLink} 
+                            <button 
+                              onClick={() => {
+                                const key = getPricingKey(card.title);
+                                navigate('/contact', {
+                                  state: {
+                                    inquirySource: 'pricing',
+                                    pricingPlan: card.title,
+                                    pricingKey: key
+                                  }
+                                });
+                              }}
                               className={cn(
                                 "block w-full text-center py-3.5 rounded-[12px] font-semibold transition-all duration-300",
                                 card.isPopular 
@@ -217,7 +242,7 @@ export default function Pricing() {
                               )}
                             >
                               {card.ctaText}
-                            </Link>
+                            </button>
                           </div>
                         </motion.div>
                       );
@@ -257,9 +282,18 @@ export default function Pricing() {
                 </div>
                 <div className="shrink-0 text-center lg:text-right">
                   <div className="text-2xl font-semibold mb-6 text-[#0f172a] uppercase">{smartPackage.pricingText}</div>
-                  <Link to={smartPackage.ctaLink} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-[#7c3aed] to-[#a855f7] text-white shadow-[0_6px_20px_rgba(124,58,237,0.3)] rounded-full font-bold hover:scale-105 transition-transform duration-300">
-                    {smartPackage.ctaText} <ArrowRight className="w-5 h-5" />
-                  </Link>
+                  <button 
+                    onClick={() => navigate('/contact', {
+                      state: {
+                        inquirySource: 'pricing',
+                        pricingPlan: smartPackage.title || 'Smart System Package',
+                        pricingKey: 'smartSystemPackage'
+                      }
+                    })}
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-[#7c3aed] to-[#a855f7] text-white shadow-[0_6px_20px_rgba(124,58,237,0.3)] rounded-full font-bold hover:scale-105 transition-transform duration-300"
+                  >
+                    {smartPackage.ctaText || "Book a Strategy Call"} <ArrowRight className="w-5 h-5" />
+                  </button>
                 </div>
               </div>
             </div>
@@ -354,9 +388,18 @@ export default function Pricing() {
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-2xl font-semibold mb-8 text-[#0f172a]">Custom solutions available based on your requirements.</h3>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link to="/contact" className="px-8 py-3.5 bg-gradient-to-r from-[#7c3aed] to-[#a855f7] text-white rounded-full font-semibold shadow-[0_6px_20px_rgba(124,58,237,0.3)] hover:scale-[1.02] hover:shadow-[0_8px_25px_rgba(124,58,237,0.4)] transition-all">
+            <button 
+              onClick={() => navigate('/contact', {
+                state: {
+                  inquirySource: 'pricing',
+                  pricingPlan: 'Free Consultation',
+                  pricingKey: 'consultation'
+                }
+              })}
+              className="px-8 py-3.5 bg-gradient-to-r from-[#7c3aed] to-[#a855f7] text-white rounded-full font-semibold shadow-[0_6px_20px_rgba(124,58,237,0.3)] hover:scale-[1.02] hover:shadow-[0_8px_25px_rgba(124,58,237,0.4)] transition-all"
+            >
               Book Free Consultation →
-            </Link>
+            </button>
             <Link to="/portfolio" className="px-8 py-3.5 bg-white text-[#0f172a] border border-[#e2e8f0] hover:border-[#7c3aed] hover:text-[#7c3aed] rounded-full font-semibold transition-all">
               View Our Work →
             </Link>
@@ -385,12 +428,18 @@ export default function Pricing() {
         <div className="max-w-3xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#0f172a]">Ready to start your project?</h2>
           <p className="text-xl text-[#64748b] mb-10">Every great product starts with a conversation.</p>
-          <Link 
-            to="/contact" 
+          <button 
+            onClick={() => navigate('/contact', {
+              state: {
+                inquirySource: 'pricing',
+                pricingPlan: 'Free Consultation',
+                pricingKey: 'consultation'
+              }
+            })}
             className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#7c3aed] to-[#a855f7] text-white rounded-full font-bold text-lg hover:scale-[1.02] shadow-[0_6px_20px_rgba(124,58,237,0.3)] hover:shadow-[0_8px_25px_rgba(124,58,237,0.4)] transition-all duration-300"
           >
             Book a Free Call <ArrowRight className="w-5 h-5" />
-          </Link>
+          </button>
         </div>
       </section>
       

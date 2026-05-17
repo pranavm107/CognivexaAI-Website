@@ -255,7 +255,7 @@ const Home = () => {
 
                         <div className="flex flex-col items-center mt-10 space-y-6">
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                                <motion.a href="#contact"
+                                <motion.a href="/contact"
                                     whileHover={{ scale: 1.04, boxShadow: "0 8px 32px rgba(124,58,237,0.35)" }}
                                     whileTap={{ scale: 0.97 }}
                                     className="inline-flex min-w-[220px] h-14 px-8 items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold text-lg shadow-lg transition-all duration-300">
