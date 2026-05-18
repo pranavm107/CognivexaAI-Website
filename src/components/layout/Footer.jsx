@@ -226,21 +226,41 @@ const Footer = () => {
                 </motion.div>
             </div>
 
-            {/* SECTION 3 — Giant Brand Watermark */}
-            <div className="overflow-hidden w-full select-none pointer-events-none mt-8 z-0">
-                <motion.p
-                    style={{
-                        y: watermarkY,
-                        fontSize: "clamp(48px, 9vw, 130px)",
-                        color: "transparent",
-                        WebkitTextStroke: "1px rgba(255,255,255,0.06)",
-                        letterSpacing: "-3px",
-                    }}
-                    className="text-center font-black leading-[0.85] whitespace-nowrap"
-                >
-                    CognivexaAI
-                </motion.p>
-            </div>
+{/* LUXURY PREMIUM INFINITE LOOP GIANT BRAND TEXT */}
+<div className="relative w-full overflow-hidden py-10 select-none pointer-events-none">
+
+    {/* Infinite Marquee */}
+    <motion.div
+        className="flex whitespace-nowrap"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+            duration: 20,
+            ease: "linear",
+            repeat: Infinity,
+        }}
+    >
+        {[...Array(2)].map((_, index) => (
+            <h1
+                key={index}
+                className="
+                    pr-20
+                    leading-none
+                    tracking-[-0.09em]
+                    font-black
+                "
+                style={{
+                    fontSize: "clamp(140px, 22vw, 420px)",
+                    fontFamily: "'Inter Tight', sans-serif",
+                    color: "rgba(255,255,255,0.04)",
+                    WebkitTextStroke: "1px rgba(255,255,255,0.05)",
+                }}
+            >
+                CognivexaAI
+            </h1>
+        ))}
+    </motion.div>
+</div>  
+
 
             {/* SECTION 4 — Bottom Bar */}
             <div className="border-t border-white/[0.05] relative z-10">

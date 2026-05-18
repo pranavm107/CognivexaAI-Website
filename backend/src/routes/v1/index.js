@@ -145,6 +145,10 @@ const defaultRoutes = [
     route: conceptBuildRoute,
   },
   {
+    path: '/portfolio-builds',
+    route: conceptBuildRoute,
+  },
+  {
     path: '/specialized-teams',
     route: specializedTeamRoute,
   },

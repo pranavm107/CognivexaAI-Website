@@ -71,20 +71,33 @@ const ContactSection = () => {
         }
         // 2. Portfolio hydration (Priority 2)
         else if (location.state?.sourcePortfolioBuild && !formData.sourcePortfolioBuild) {
-            const template = getPortfolioTemplate(
-                location.state.portfolioSlug,
-                location.state.sourcePortfolioBuild,
-                location.state.portfolioBadge
-            );
-            setFormData(prev => ({
-                ...prev,
-                serviceOfInterest: template.service,
-                budget: template.budget,
-                timeline: template.timeline,
-                message: template.message,
-                sourcePortfolioBuild: location.state.sourcePortfolioBuild,
-                inquirySource: 'portfolio'
-            }));
+            if (location.state.inquiryAutofill) {
+                const autofill = location.state.inquiryAutofill;
+                setFormData(prev => ({
+                    ...prev,
+                    serviceOfInterest: autofill.service || prev.serviceOfInterest,
+                    budget: autofill.budget || prev.budget,
+                    timeline: autofill.timeline || prev.timeline,
+                    message: autofill.message || prev.message,
+                    sourcePortfolioBuild: location.state.sourcePortfolioBuild,
+                    inquirySource: 'portfolio'
+                }));
+            } else {
+                const template = getPortfolioTemplate(
+                    location.state.portfolioSlug,
+                    location.state.sourcePortfolioBuild,
+                    location.state.portfolioBadge
+                );
+                setFormData(prev => ({
+                    ...prev,
+                    serviceOfInterest: template.service,
+                    budget: template.budget,
+                    timeline: template.timeline,
+                    message: template.message,
+                    sourcePortfolioBuild: location.state.sourcePortfolioBuild,
+                    inquirySource: 'portfolio'
+                }));
+            }
         }
     }, [location.state, formData.pricingKey, formData.sourcePortfolioBuild]);
 

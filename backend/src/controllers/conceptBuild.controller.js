@@ -10,6 +10,7 @@ export const createBuild = catchAsync(async (req, res) => {
 export const getBuilds = catchAsync(async (req, res) => {
   const filter = {};
   if (req.query.active !== undefined) filter.active = req.query.active === 'true';
+  if (req.query.slug !== undefined) filter.slug = req.query.slug;
   const builds = await conceptBuildService.queryBuilds(filter);
   res.send({ success: true, results: builds });
 });
@@ -22,4 +23,9 @@ export const updateBuild = catchAsync(async (req, res) => {
 export const deleteBuild = catchAsync(async (req, res) => {
   await conceptBuildService.deleteBuild(req.params.id);
   res.status(httpStatus.NO_CONTENT).send();
+});
+
+export const getBuildBySlug = catchAsync(async (req, res) => {
+  const build = await conceptBuildService.getBuildBySlug(req.params.slug);
+  res.send({ success: true, data: build });
 });

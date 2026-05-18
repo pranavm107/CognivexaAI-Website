@@ -74,7 +74,7 @@ const ClientLayout = () => {
       <aside className="w-72 hidden lg:flex flex-col border-r border-slate-100 bg-white sticky top-0 min-h-[100svh]">
         <div className="p-8 flex items-center gap-3">
           <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-indigo-100">
-            <Sparkles className="w-6 h-6" />
+            
           </div>
           <div className="flex flex-col">
             <span className="text-sm font-black tracking-tight leading-none uppercase">CognivexaAI</span>

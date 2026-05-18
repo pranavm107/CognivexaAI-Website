@@ -7,6 +7,9 @@ router.route('/')
   .post(conceptBuildController.createBuild)
   .get(conceptBuildController.getBuilds);
 
+router.get('/slug/:slug', conceptBuildController.getBuildBySlug);
+router.get('/:slug', conceptBuildController.getBuildBySlug);
+
 router.route('/:id')
   .put(conceptBuildController.updateBuild)
   .delete(conceptBuildController.deleteBuild);
