@@ -63,7 +63,7 @@ const Footer = () => {
         { name: "Twitter/X", icon: Twitter, url: "https://twitter.com/cognivexaai" },
         { name: "Instagram", icon: Instagram, url: "https://instagram.com/cognivexaai" },
     ];
-    const legal = ["Privacy Policy", "Terms of Service", "Cookie Policy"];
+    const legal = ["Privacy Policy", "Terms of Service"];
 
     return (
         <footer 
@@ -244,13 +244,10 @@ const Footer = () => {
 
             {/* SECTION 4 — Bottom Bar */}
             <div className="border-t border-white/[0.05] relative z-10">
-                <div className="max-w-[1200px] mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
-                    <div className="flex items-center text-[12px] text-white/30 text-center md:text-left">
+                <div className="max-w-[1200px] mx-auto px-6 py-8 flex items-center justify-center">
+                    <div className="flex items-center text-[12px] text-white/30">
                         <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse inline-block mr-2" />
                         © 2026 CognivexaAI. Engineered for excellence.
-                    </div>
-                    <div className="text-[12px] text-white/30 text-center md:text-right">
-                        Built with React · Deployed on Vercel
                     </div>
                 </div>
             </div>
